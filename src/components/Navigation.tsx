@@ -11,10 +11,13 @@ import {
 } from "@nextui-org/navbar";
 import { usePathname } from "next/navigation";
 import React, { useState } from "react";
-import CombinedLink, { Link } from "./CombinedLink";
+import CombinedLink, { LinkAttributes } from "./CombinedLink";
+import { Github, Linkedin } from "lucide-react";
+import { Button } from "@nextui-org/button";
+import { Link } from "@nextui-org/react";
 
 const Navigation = () => {
-  const links: Link[] = [
+  const items: LinkAttributes[] = [
     {
       name: "Home",
       href: "/",
@@ -48,7 +51,7 @@ const Navigation = () => {
         <NavbarBrand>
           <p className="font-bold text-inherit">Max Kelly</p>
         </NavbarBrand>
-        {links.map((link) => (
+        {items.map((link) => (
           <NavbarItem key={link.name} isActive={link.href === pathname}>
             <CombinedLink link={link} />
           </NavbarItem>
@@ -56,7 +59,7 @@ const Navigation = () => {
       </NavbarContent>
       <NavbarContent justify="end">
         <NavbarMenu>
-          {links.map((link) => (
+          {items.map((link) => (
             <NavbarMenuItem key={link.name}>
               <CombinedLink
                 className="w-full"
@@ -67,6 +70,30 @@ const Navigation = () => {
             </NavbarMenuItem>
           ))}
         </NavbarMenu>
+      </NavbarContent>
+      <NavbarContent justify="end">
+        <Button
+          as={Link}
+          target="_blank"
+          href="https://github.com/maxwillkelly"
+          isIconOnly
+          size="sm"
+          variant="light"
+          aria-label="Github"
+        >
+          <Github />
+        </Button>
+        <Button
+          as={Link}
+          target="_blank"
+          isIconOnly
+          size="sm"
+          variant="light"
+          aria-label="LinkedIn"
+          href="https://www.linkedin.com/in/maxwillkelly/"
+        >
+          <Linkedin />
+        </Button>
       </NavbarContent>
     </Navbar>
   );

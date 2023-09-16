@@ -2,13 +2,13 @@ import { Link, LinkProps } from "@nextui-org/link";
 import NextLink from "next/link";
 import React from "react";
 
-export type Link = {
+export type LinkAttributes = {
   name: string;
   href: string;
 };
 
 interface Props extends LinkProps {
-  link: Link;
+  link: LinkAttributes;
 }
 
 const CombinedLink = ({ link: { name, href }, ...other }: Props) => {
