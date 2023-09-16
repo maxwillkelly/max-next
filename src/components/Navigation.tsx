@@ -58,7 +58,12 @@ const Navigation = () => {
         <NavbarMenu>
           {links.map((link) => (
             <NavbarMenuItem key={link.name}>
-              <CombinedLink className="w-full" link={link} size="lg" onClick={() => setIsMenuOpen(false)} />
+              <CombinedLink
+                className="w-full"
+                link={link}
+                size="lg"
+                onClick={() => setIsMenuOpen(false)}
+              />
             </NavbarMenuItem>
           ))}
         </NavbarMenu>

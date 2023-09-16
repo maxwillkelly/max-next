@@ -25,10 +25,12 @@ export default function RootLayout({
           inter.className
         )}
       >
-        <Providers>
-          <Navigation />
-          {children}
-        </Providers>
+        <div className="flex min-h-screen flex-col">
+          <Providers>
+            <Navigation />
+            <main className="flex-1">{children}</main>
+          </Providers>
+        </div>
       </body>
     </html>
   );
