@@ -1,6 +1,5 @@
 import { Button } from "@nextui-org/button";
 import { SendHorizontal, Smile } from "lucide-react";
-import React from "react";
 
 const HomePage = () => {
   return (

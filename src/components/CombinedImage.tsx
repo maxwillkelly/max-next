@@ -1,5 +1,3 @@
-import React from "react";
-
 import { Image, ImageProps } from "@nextui-org/image";
 import NextImage from "next/image";
 

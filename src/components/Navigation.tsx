@@ -1,5 +1,7 @@
 "use client";
 
+import CombinedLink, { LinkAttributes } from "./CombinedLink";
+import { Button } from "@nextui-org/button";
 import {
   Navbar,
   NavbarBrand,
@@ -9,12 +11,10 @@ import {
   NavbarMenuToggle,
   NavbarMenuItem,
 } from "@nextui-org/navbar";
-import { usePathname } from "next/navigation";
-import React, { useState } from "react";
-import CombinedLink, { LinkAttributes } from "./CombinedLink";
-import { Github, Linkedin } from "lucide-react";
-import { Button } from "@nextui-org/button";
 import { Link } from "@nextui-org/react";
+import { Github, Linkedin } from "lucide-react";
+import { usePathname } from "next/navigation";
+import { useState } from "react";
 
 const Navigation = () => {
   const items: LinkAttributes[] = [
@@ -47,7 +47,7 @@ const Navigation = () => {
           <p className="font-bold text-inherit">Max Kelly</p>
         </NavbarBrand>
       </NavbarContent>
-      <NavbarContent className="hidden sm:flex gap-4" justify="center">
+      <NavbarContent className="hidden gap-4 sm:flex" justify="center">
         <NavbarBrand>
           <p className="font-bold text-inherit">Max Kelly</p>
         </NavbarBrand>

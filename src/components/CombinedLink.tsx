@@ -1,6 +1,5 @@
 import { Link, LinkProps } from "@nextui-org/link";
 import NextLink from "next/link";
-import React from "react";
 
 export type LinkAttributes = {
   name: string;
