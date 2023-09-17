@@ -13,7 +13,7 @@ import {
   NavbarMenuToggle,
   NavbarMenuItem,
 } from "@nextui-org/navbar";
-import { Github, Linkedin } from "lucide-react";
+import { Github, Linkedin, Menu, X } from "lucide-react";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
 
@@ -41,6 +41,7 @@ const Navigation = () => {
       <NavbarContent className="sm:hidden" justify="start">
         <NavbarMenuToggle
           aria-label={isMenuOpen ? "Close menu" : "Open menu"}
+          icon={(isOpen) => isOpen ? <X /> : <Menu />}
         />
       </NavbarContent>
       <NavbarContent className="sm:hidden" justify="center">
