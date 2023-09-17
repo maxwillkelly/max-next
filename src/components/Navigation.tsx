@@ -1,7 +1,9 @@
 "use client";
 
 import CombinedLink, { LinkAttributes } from "./CombinedLink";
+import DarkModeDropdown from "./navigation/DarkModeDropdown";
 import { Button } from "@nextui-org/button";
+import { Link } from "@nextui-org/link";
 import {
   Navbar,
   NavbarBrand,
@@ -11,7 +13,6 @@ import {
   NavbarMenuToggle,
   NavbarMenuItem,
 } from "@nextui-org/navbar";
-import { Link } from "@nextui-org/react";
 import { Github, Linkedin } from "lucide-react";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
@@ -94,6 +95,7 @@ const Navigation = () => {
         >
           <Linkedin />
         </Button>
+        <DarkModeDropdown />
       </NavbarContent>
     </Navbar>
   );
