@@ -42,7 +42,7 @@ const Navigation = () => {
       <NavbarContent className="sm:hidden" justify="start">
         <NavbarMenuToggle
           aria-label={isMenuOpen ? "Close menu" : "Open menu"}
-          icon={(isOpen) => isOpen ? <X /> : <Menu />}
+          icon={(isOpen) => (isOpen ? <X /> : <Menu />)}
         />
       </NavbarContent>
       <NavbarContent className="sm:hidden" justify="center">
