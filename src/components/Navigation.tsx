@@ -32,6 +32,14 @@ const Navigation = () => {
       name: "Experience",
       href: "/experience",
     },
+    {
+      name: "Projects",
+      href: "/projects",
+    },
+    {
+      name: "Contact",
+      href: "/contact",
+    },
   ];
 
   const [isMenuOpen, setIsMenuOpen] = useState(false);
