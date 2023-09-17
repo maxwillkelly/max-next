@@ -13,8 +13,8 @@ const HomePage = () => {
           the small details.
         </p>
         <div className="flex gap-4">
-          <Button endContent={<Smile />}>See more</Button>
-          <Button endContent={<SendHorizontal />}>Message me</Button>
+          <Button color="danger" variant="shadow" endContent={<Smile />}>See more</Button>
+          <Button color="danger" variant="bordered" endContent={<SendHorizontal />}>Message me</Button>
         </div>
       </div>
     </section>

@@ -56,7 +56,7 @@ const Navigation = () => {
         </NavbarBrand>
         {items.map((link) => (
           <NavbarItem key={link.name} isActive={link.href === pathname}>
-            <CombinedLink link={link} />
+            <CombinedLink link={link} color="foreground" />
           </NavbarItem>
         ))}
       </NavbarContent>
@@ -77,7 +77,7 @@ const Navigation = () => {
       <NavbarContent justify="end">
         <Button
           as={Link}
-          target="_blank"
+          isExternal
           href="https://github.com/maxwillkelly"
           isIconOnly
           size="sm"
@@ -88,7 +88,7 @@ const Navigation = () => {
         </Button>
         <Button
           as={Link}
-          target="_blank"
+          isExternal
           isIconOnly
           size="sm"
           variant="light"
