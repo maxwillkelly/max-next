@@ -14,6 +14,7 @@ import {
   NavbarMenuItem,
 } from "@nextui-org/navbar";
 import { Github, Linkedin, Menu, X } from "lucide-react";
+import NextLink from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
 
@@ -45,12 +46,12 @@ const Navigation = () => {
         />
       </NavbarContent>
       <NavbarContent className="sm:hidden" justify="center">
-        <NavbarBrand>
+        <NavbarBrand as={NextLink} href="/">
           <p className="font-bold text-inherit">Max Kelly</p>
         </NavbarBrand>
       </NavbarContent>
       <NavbarContent className="hidden gap-4 sm:flex" justify="center">
-        <NavbarBrand>
+        <NavbarBrand as={NextLink} href="/">
           <p className="font-bold text-inherit">Max Kelly</p>
         </NavbarBrand>
         {items.map((link) => (
