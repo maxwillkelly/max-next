@@ -13,6 +13,7 @@ import {
   NavbarMenuToggle,
   NavbarMenuItem,
 } from "@nextui-org/navbar";
+import { Tooltip } from "@nextui-org/tooltip";
 import { Github, Linkedin, Menu, X } from "lucide-react";
 import NextLink from "next/link";
 import { usePathname } from "next/navigation";
@@ -83,28 +84,32 @@ const Navigation = () => {
         </NavbarMenu>
       </NavbarContent>
       <NavbarContent justify="end">
-        <Button
-          as={Link}
-          isExternal
-          href="https://github.com/maxwillkelly"
-          isIconOnly
-          size="sm"
-          variant="light"
-          aria-label="Github"
-        >
-          <Github />
-        </Button>
-        <Button
-          as={Link}
-          isExternal
-          isIconOnly
-          size="sm"
-          variant="light"
-          aria-label="LinkedIn"
-          href="https://www.linkedin.com/in/maxwillkelly/"
-        >
-          <Linkedin />
-        </Button>
+        <Tooltip content="Github" placement="bottom">
+          <Button
+            as={Link}
+            isExternal
+            href="https://github.com/maxwillkelly"
+            isIconOnly
+            size="sm"
+            variant="light"
+            aria-label="Github"
+          >
+            <Github />
+          </Button>
+        </Tooltip>
+        <Tooltip content="LinkedIn" placement="bottom">
+          <Button
+            as={Link}
+            isExternal
+            isIconOnly
+            size="sm"
+            variant="light"
+            aria-label="LinkedIn"
+            href="https://www.linkedin.com/in/maxwillkelly/"
+          >
+            <Linkedin />
+          </Button>
+        </Tooltip>
         <DarkModeDropdown />
       </NavbarContent>
     </Navbar>
