@@ -15,14 +15,14 @@ const ErrorPage = () => {
           Looks like you&apos;ve gone to a page that doesn&apos;t exist!{" "}
         </p>
         <Button
-            as={NextLink}
-            href="/about"
-            color="danger"
-            variant="shadow"
-            endContent={<Home />}
-          >
-            Let&apos;s go home
-          </Button>
+          as={NextLink}
+          href="/about"
+          color="danger"
+          variant="shadow"
+          endContent={<Home />}
+        >
+          Let&apos;s go home
+        </Button>
       </div>
     </section>
   );
