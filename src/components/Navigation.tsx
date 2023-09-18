@@ -14,7 +14,7 @@ import {
   NavbarMenuItem,
 } from "@nextui-org/navbar";
 import { Tooltip } from "@nextui-org/tooltip";
-import { Github, Linkedin, Menu, X } from "lucide-react";
+import { Github, Linkedin, Mail, Menu, X } from "lucide-react";
 import NextLink from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
@@ -84,6 +84,19 @@ const Navigation = () => {
         </NavbarMenu>
       </NavbarContent>
       <NavbarContent justify="end">
+      <Tooltip content="Email me" placement="bottom">
+          <Button
+            as={Link}
+            isExternal
+            href="mailto:maxwill.kelly@gmail.com"
+            isIconOnly
+            size="sm"
+            variant="light"
+            aria-label="Email me"
+          >
+            <Mail />
+          </Button>
+        </Tooltip>
         <Tooltip content="Github" placement="bottom">
           <Button
             as={Link}
