@@ -9,7 +9,7 @@ const HomePage = () => {
         <h1 className="text-3xl font-bold sm:text-5xl md:text-6xl lg:text-8xl">
           Max Kelly
         </h1>
-        <p className="sm:text-xl sm:leading-8">
+        <p className="p-4 sm:text-xl sm:leading-8">
           I&apos;m a software engineer based in the UK, that thinks big about
           the small details.
         </p>
@@ -26,8 +26,7 @@ const HomePage = () => {
           <Button
             as={NextLink}
             href="/contact"
-            color="danger"
-            variant="bordered"
+            variant="ghost"
             endContent={<SendHorizontal />}
           >
             Message me
