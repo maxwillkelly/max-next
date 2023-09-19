@@ -7,6 +7,8 @@ import {
   DropdownMenu,
   DropdownTrigger,
 } from "@nextui-org/dropdown";
+import { Skeleton } from "@nextui-org/react";
+// import { Skeleton } from "@nextui-org/skeleton";
 import { Moon, Sun } from "lucide-react";
 import { useTheme } from "next-themes";
 import { useState, useEffect } from "react";
@@ -19,7 +21,7 @@ const DarkModeDropdown = () => {
     setMounted(true);
   }, []);
 
-  if (!mounted) return null;
+  if (!mounted) return <Skeleton className="h-10 w-10 rounded-xl" />;
 
   return (
     <Dropdown>

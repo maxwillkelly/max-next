@@ -84,7 +84,7 @@ const Navigation = () => {
         </NavbarMenu>
       </NavbarContent>
       <NavbarContent justify="end">
-      <Tooltip content="Email me" placement="bottom">
+        <Tooltip content="Email me" placement="bottom">
           <Button
             as={Link}
             isExternal
