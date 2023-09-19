@@ -4,9 +4,15 @@ import { Card, CardBody, CardFooter } from "@nextui-org/card";
 import {
   AngularjsOriginal,
   COriginal,
+  CplusplusOriginal,
+  CsharpOriginal,
+  DotnetcoreOriginal,
+  JavaOriginal,
   JavascriptOriginal,
   NextjsOriginal,
+  PythonOriginal,
   ReactOriginal,
+  ScalaOriginal,
   TypescriptOriginal,
 } from "devicons-react";
 import { DownloadCloud } from "lucide-react";
@@ -88,6 +94,30 @@ const AboutPage = () => {
           <LanguageCard
             title="C"
             icon={<COriginal className="w-auto" size={64} />}
+          />
+          <LanguageCard
+            title="C++"
+            icon={<CplusplusOriginal className="w-auto" size={64} />}
+          />
+          <LanguageCard
+            title="C#"
+            icon={<CsharpOriginal className="w-auto" size={64} />}
+          />
+          <LanguageCard
+            title=".NET"
+            icon={<DotnetcoreOriginal className="w-auto" size={64} />}
+          />
+          <LanguageCard
+            title="Java"
+            icon={<JavaOriginal className="w-auto" size={64} />}
+          />
+          <LanguageCard
+            title="Scala"
+            icon={<ScalaOriginal className="w-auto" size={64} />}
+          />
+          <LanguageCard
+            title="Python"
+            icon={<PythonOriginal className="w-auto" size={64} />}
           />
         </div>
       </div>
