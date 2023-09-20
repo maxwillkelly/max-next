@@ -8,7 +8,6 @@ import {
   COriginal,
   CplusplusOriginal,
   CsharpOriginal,
-  GraphqlPlain,
   JavaOriginal,
   JavascriptOriginal,
   MongodbOriginal,
