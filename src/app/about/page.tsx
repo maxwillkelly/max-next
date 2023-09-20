@@ -1,20 +1,25 @@
+import ExpoIcon from "@/components/about/ExpoIcon";
+import ExpressIcon from "@/components/about/ExpressIcon";
 import LanguageCard from "@/components/about/LanguageCard";
 import NextjsIcon from "@/components/about/NextjsIcon";
 import { Button } from "@nextui-org/button";
 import {
-  AngularjsOriginal,
   COriginal,
   CplusplusOriginal,
   CsharpOriginal,
-  DotnetcoreOriginal,
   JavaOriginal,
   JavascriptOriginal,
+  NestjsPlain,
+  NodejsOriginal,
   PythonOriginal,
   ReactOriginal,
   ScalaOriginal,
+  SvelteOriginal,
   TypescriptOriginal,
+  VuejsOriginal,
 } from "devicons-react";
 import { DownloadCloud } from "lucide-react";
+import Image from 'next/image';
 
 const AboutPage = () => {
   return (
@@ -80,16 +85,26 @@ const AboutPage = () => {
             title="TypeScript"
             icon={<TypescriptOriginal size={64} />}
           />
+          <LanguageCard title="Node.js" icon={<NodejsOriginal size={64} />} />
+          <LanguageCard title="Express" icon={<ExpressIcon />} />
+          <LanguageCard title="NestJS" icon={<NestjsPlain size={64} />} />
           <LanguageCard
-            title="Angular.js"
-            icon={<AngularjsOriginal size={64} />}
+            title="React Native"
+            icon={<ReactOriginal size={64} />}
           />
+          <LanguageCard title="Expo" icon={<ExpoIcon />} />
+          <LanguageCard title="Svelte" icon={<SvelteOriginal size={64} />} />
+          <LanguageCard title="Vue.js" icon={<VuejsOriginal size={64} />} />
+
           <LanguageCard title="C" icon={<COriginal size={64} />} />
           <LanguageCard title="C++" icon={<CplusplusOriginal size={64} />} />
           <LanguageCard title="C#" icon={<CsharpOriginal size={64} />} />
-          <LanguageCard title=".NET" icon={<DotnetcoreOriginal size={64} />} />
-          <LanguageCard title="Java" icon={<JavaOriginal size={64} />} />
+          <LanguageCard
+            title=".NET"
+            icon={<Image src="/dotnet.svg" alt=".NET logo" width={64} height={64} />}
+          />
           <LanguageCard title="Scala" icon={<ScalaOriginal size={64} />} />
+          <LanguageCard title="Java" icon={<JavaOriginal size={64} />} />
           <LanguageCard title="Python" icon={<PythonOriginal size={64} />} />
         </div>
       </div>
