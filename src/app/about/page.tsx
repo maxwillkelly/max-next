@@ -1,6 +1,5 @@
-"use client";
-
 import LanguageCard from "@/components/about/LanguageCard";
+import NextjsIcon from "@/components/about/NextjsIcon";
 import { Button } from "@nextui-org/button";
 import {
   AngularjsOriginal,
@@ -10,26 +9,14 @@ import {
   DotnetcoreOriginal,
   JavaOriginal,
   JavascriptOriginal,
-  NextjsOriginal,
   PythonOriginal,
   ReactOriginal,
   ScalaOriginal,
   TypescriptOriginal,
 } from "devicons-react";
 import { DownloadCloud } from "lucide-react";
-import { useTheme } from "next-themes";
-import { useEffect, useState } from "react";
 
 const AboutPage = () => {
-  const [mounted, setMounted] = useState(false);
-  const { resolvedTheme } = useTheme();
-
-  useEffect(() => {
-    setMounted(true);
-  }, []);
-
-  if (!mounted) return null;
-
   return (
     <section className="space-y-6 pb-8 pt-6 md:pb-12 md:pt-10 lg:py-40">
       <div className="container flex min-w-full flex-col items-center gap-4 text-center">
@@ -84,16 +71,7 @@ const AboutPage = () => {
         </p>
         <div className="flex max-w-2xl flex-wrap items-center justify-center gap-3 p-8 sm:gap-6">
           <LanguageCard title="React" icon={<ReactOriginal size={64} />} />
-          <LanguageCard
-            title="Next.js"
-            icon={
-              <NextjsOriginal
-                fill={resolvedTheme === "dark" ? "white" : undefined}
-                className="w-auto text-white"
-                size={64}
-              />
-            }
-          />
+          <LanguageCard title="Next.js" icon={<NextjsIcon />} />
           <LanguageCard
             title="JavaScript"
             icon={<JavascriptOriginal size={64} />}
