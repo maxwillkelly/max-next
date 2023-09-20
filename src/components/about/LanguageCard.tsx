@@ -8,7 +8,7 @@ interface Props {
 
 const LanguageCard = ({ title, icon }: React.PropsWithChildren<Props>) => {
   return (
-    <Card className="w-28">
+    <Card className="h-[8.75rem] w-28">
       <CardBody className="items-center justify-center">{icon}</CardBody>
       <CardFooter className="justify-center px-2 pt-0">
         <p>{title}</p>
