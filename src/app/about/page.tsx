@@ -80,9 +80,10 @@ const AboutPage = () => {
           low-level languages like C, to mordern web frameworks like React and
           Next.js.
         </p>
-        <div className="flex max-w-2xl flex-wrap items-center justify-center gap-3 p-8 sm:gap-6">
-          <LanguageCard title="React" icon={<ReactOriginal size={64} />} />
-          <LanguageCard title="Next.js" icon={<NextjsIcon />} />
+        <h2 className="p-4">
+          Built for the front-end and full-stack, my bread and butter
+        </h2>
+        <div className="flex max-w-3xl flex-wrap items-center justify-center gap-3 p-8 sm:gap-6">
           <LanguageCard
             title="JavaScript"
             icon={<JavascriptOriginal size={64} />}
@@ -91,29 +92,20 @@ const AboutPage = () => {
             title="TypeScript"
             icon={<TypescriptOriginal size={64} />}
           />
+          <LanguageCard title="React" icon={<ReactOriginal size={64} />} />
+          <LanguageCard title="Next.js" icon={<NextjsIcon />} />
+          <LanguageCard title="Svelte" icon={<SvelteOriginal size={64} />} />
+          <LanguageCard title="Vue.js" icon={<VuejsOriginal size={64} />} />
+          <LanguageCard
+            title="Tailwind CSS"
+            icon={<TailwindcssPlain size={64} />}
+          />
+        </div>
+        <h2 className="">Back-end tools and frameworks</h2>
+        <div className="flex max-w-2xl flex-wrap items-center justify-center gap-3 p-8 sm:gap-6">
           <LanguageCard title="Node.js" icon={<NodejsOriginal size={64} />} />
           <LanguageCard title="Express" icon={<ExpressIcon />} />
           <LanguageCard title="NestJS" icon={<NestjsPlain size={64} />} />
-          <LanguageCard
-            title="React Native"
-            icon={<ReactOriginal size={64} />}
-          />
-          <LanguageCard title="Expo" icon={<ExpoIcon />} />
-          <LanguageCard title="Svelte" icon={<SvelteOriginal size={64} />} />
-          <LanguageCard title="Vue.js" icon={<VuejsOriginal size={64} />} />
-
-          <LanguageCard title="C" icon={<COriginal size={64} />} />
-          <LanguageCard title="C++" icon={<CplusplusOriginal size={64} />} />
-          <LanguageCard title="C#" icon={<CsharpOriginal size={64} />} />
-          <LanguageCard
-            title=".NET"
-            icon={
-              <Image src="/dotnet.svg" alt=".NET logo" width={64} height={64} />
-            }
-          />
-          <LanguageCard title="Scala" icon={<ScalaOriginal size={64} />} />
-          <LanguageCard title="Java" icon={<JavaOriginal size={64} />} />
-          <LanguageCard title="Python" icon={<PythonOriginal size={64} />} />
           <LanguageCard
             title="GraphQL"
             icon={
@@ -131,22 +123,42 @@ const AboutPage = () => {
               </svg>
             }
           />
+          <LanguageCard title="gRPC" icon={<GrpcIcon />} />
+          <LanguageCard title="C#" icon={<CsharpOriginal size={64} />} />
           <LanguageCard
-            title="gRPC"
+            title=".NET"
             icon={
-              <GrpcIcon />
+              <Image src="/dotnet.svg" alt=".NET logo" width={64} height={64} />
             }
           />
+        </div>
+        <h2>Databases</h2>
+        <div className="flex max-w-2xl flex-wrap items-center justify-center gap-3 p-8 sm:gap-6">
           <LanguageCard
             title="PostgresSQL"
             icon={<PostgresqlOriginal size={64} />}
           />
           <LanguageCard title="MySQL" icon={<MysqlOriginal size={64} />} />
           <LanguageCard title="MongoDB" icon={<MongodbOriginal size={64} />} />
+        </div>
+        <h2>Mobile development</h2>
+        <div className="flex max-w-2xl flex-wrap items-center justify-center gap-3 p-8 sm:gap-6">
           <LanguageCard
-            title="Tailwind CSS"
-            icon={<TailwindcssPlain size={64} />}
+            title="React Native"
+            icon={<ReactOriginal size={64} />}
           />
+          <LanguageCard title="Expo" icon={<ExpoIcon />} />
+        </div>
+        <h2>Low-level languages where performance matters most</h2>
+        <div className="flex max-w-2xl flex-wrap items-center justify-center gap-3 p-8 sm:gap-6">
+          <LanguageCard title="C" icon={<COriginal size={64} />} />
+          <LanguageCard title="C++" icon={<CplusplusOriginal size={64} />} />
+        </div>
+        <h2 className="">Other languages I&apos;ve dabbled in</h2>
+        <div className="flex max-w-2xl flex-wrap items-center justify-center gap-3 p-8 sm:gap-6">
+          <LanguageCard title="Scala" icon={<ScalaOriginal size={64} />} />
+          <LanguageCard title="Java" icon={<JavaOriginal size={64} />} />
+          <LanguageCard title="Python" icon={<PythonOriginal size={64} />} />
         </div>
       </div>
     </section>
