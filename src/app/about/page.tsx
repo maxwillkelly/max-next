@@ -43,7 +43,7 @@ const AboutPage = () => {
       <div className="grid grid-cols-3 place-items-center gap-3 pt-16 text-center sm:gap-9 md:px-32">
         <div className="grid h-28 w-40 place-items-center">
           <h2 className="text-5xl leading-normal text-zinc-900 dark:text-zinc-100">
-            3+
+            2+
           </h2>
           <p className="text-sm leading-normal text-zinc-600 dark:text-zinc-300">
             Years experience
@@ -51,7 +51,7 @@ const AboutPage = () => {
         </div>
         <div className="grid h-28 w-40 place-items-center">
           <h2 className="text-5xl leading-normal text-zinc-900 dark:text-zinc-100">
-            12+
+            8+
           </h2>
           <p className="text-sm leading-normal text-zinc-600 dark:text-zinc-300">
             Languages
@@ -62,7 +62,7 @@ const AboutPage = () => {
             20+
           </h2>
           <p className="text-sm leading-normal text-zinc-600 dark:text-zinc-300">
-            Projects
+            Tools
           </p>
         </div>
       </div>
@@ -72,17 +72,17 @@ const AboutPage = () => {
         </Button>
       </div>
       <div className="container flex min-w-full flex-col items-center gap-4 pt-40 text-center">
-        <h1 className="text-lg font-semibold sm:text-2xl md:text-3xl lg:text-4xl">
+        <h2 className="text-lg font-semibold sm:text-2xl md:text-3xl lg:text-4xl">
           Languages and Frameworks
-        </h1>
+        </h2>
         <p className="p-4 sm:text-lg sm:leading-8 lg:px-48">
           I have experience in a wide range of languages and frameworks, from
           low-level languages like C, to mordern web frameworks like React and
           Next.js.
         </p>
-        <h2 className="p-4">
+        <h3 className="p-4">
           Built for the front-end and full-stack, my bread and butter
-        </h2>
+        </h3>
         <div className="flex max-w-3xl flex-wrap items-center justify-center gap-3 p-8 sm:gap-6">
           <LanguageCard
             title="JavaScript"
@@ -101,7 +101,7 @@ const AboutPage = () => {
             icon={<TailwindcssPlain size={64} />}
           />
         </div>
-        <h2 className="">Back-end tools and frameworks</h2>
+        <h3 className="">Back-end tools and frameworks</h3>
         <div className="flex max-w-2xl flex-wrap items-center justify-center gap-3 p-8 sm:gap-6">
           <LanguageCard title="Node.js" icon={<NodejsOriginal size={64} />} />
           <LanguageCard title="Express" icon={<ExpressIcon />} />
@@ -132,7 +132,7 @@ const AboutPage = () => {
             }
           />
         </div>
-        <h2>Databases</h2>
+        <h3>Databases</h3>
         <div className="flex max-w-2xl flex-wrap items-center justify-center gap-3 p-8 sm:gap-6">
           <LanguageCard
             title="PostgresSQL"
@@ -141,7 +141,7 @@ const AboutPage = () => {
           <LanguageCard title="MySQL" icon={<MysqlOriginal size={64} />} />
           <LanguageCard title="MongoDB" icon={<MongodbOriginal size={64} />} />
         </div>
-        <h2>Mobile development</h2>
+        <h3>Mobile development</h3>
         <div className="flex max-w-2xl flex-wrap items-center justify-center gap-3 p-8 sm:gap-6">
           <LanguageCard
             title="React Native"
@@ -149,12 +149,12 @@ const AboutPage = () => {
           />
           <LanguageCard title="Expo" icon={<ExpoIcon />} />
         </div>
-        <h2>Low-level languages where performance matters most</h2>
+        <h3>Low-level languages where performance matters most</h3>
         <div className="flex max-w-2xl flex-wrap items-center justify-center gap-3 p-8 sm:gap-6">
           <LanguageCard title="C" icon={<COriginal size={64} />} />
           <LanguageCard title="C++" icon={<CplusplusOriginal size={64} />} />
         </div>
-        <h2 className="">Other languages I&apos;ve dabbled in</h2>
+        <h3 className="">Other languages I&apos;ve dabbled in</h3>
         <div className="flex max-w-2xl flex-wrap items-center justify-center gap-3 p-8 sm:gap-6">
           <LanguageCard title="Scala" icon={<ScalaOriginal size={64} />} />
           <LanguageCard title="Java" icon={<JavaOriginal size={64} />} />
