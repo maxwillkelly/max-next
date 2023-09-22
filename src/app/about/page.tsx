@@ -4,6 +4,7 @@ import GrpcIcon from "@/components/about/GrpcIcon";
 import LanguageCard from "@/components/about/LanguageCard";
 import NextjsIcon from "@/components/about/NextjsIcon";
 import { Button } from "@nextui-org/button";
+import { Link } from "@nextui-org/link";
 import {
   COriginal,
   CplusplusOriginal,
@@ -66,7 +67,14 @@ const AboutPage = () => {
         </div>
       </div>
       <div className="mt-8 flex flex-1 justify-center">
-        <Button variant="shadow" color="danger" endContent={<DownloadCloud />}>
+        <Button
+          as={Link}
+          isExternal
+          variant="shadow"
+          color="danger"
+          endContent={<DownloadCloud />}
+          href="/cv-feburary-2022.pdf"
+        >
           Download CV
         </Button>
       </div>
