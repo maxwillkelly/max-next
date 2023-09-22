@@ -7,6 +7,7 @@ import { Input } from "@nextui-org/input";
 import { Textarea } from "@nextui-org/input";
 import { SendHorizontal } from "lucide-react";
 import { SubmitHandler, useForm } from "react-hook-form";
+import { sendMessage } from "./actions";
 import { z } from "zod";
 
 export const messageSchema = z.object({
@@ -29,7 +30,7 @@ const ContactPage = () => {
   });
 
   const onSubmit: SubmitHandler<Message> = (data) => {
-    console.log(JSON.stringify(data, null, 2));
+    sendMessage(data)
   };
 
   return (
