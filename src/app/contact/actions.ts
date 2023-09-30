@@ -1,10 +1,21 @@
 "use server";
 
+import { Resend } from 'resend';
 import { env } from "@/env.mjs";
-
 import { Message } from "./page";
+import ContactEmailTemplate from '@/emails/ContactEmailTemplate';
 
-export const sendMessage = async (data: Message) => {
-  console.log(JSON.stringify(data, null, 2));
-  console.log('RESEND_API_KEY', env.RESEND_API_KEY);
+const resend = new Resend(env.RESEND_API_KEY);
+
+export const sendMessage = async (message: Message) => {  
+  const { firstName, lastName } = message;
+
+  const data = resend.emails.send({
+    from: 'Max Next <onboarding@resend.dev>',
+    to: [env.SEND_EMAIL],
+    subject: `You have received a message from ${firstName} ${lastName}`,
+    react: ContactEmailTemplate({ message, nodeEnv: env.NODE_ENV }),
+  })
+
+  return data;
 };
