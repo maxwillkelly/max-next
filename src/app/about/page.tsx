@@ -40,8 +40,8 @@ const AboutPage = () => {
           new technologies and applying them to solve real world problems.
         </p>
       </div>
-      <div className="grid grid-cols-3 place-items-center gap-3 pt-16 text-center sm:gap-9 md:px-32">
-        <div className="grid h-28 w-40 place-items-center">
+      <div className="grid grid-cols-3 place-items-center pt-16 text-center md:px-32">
+        <div className="grid place-items-center">
           <h2 className="text-5xl leading-normal text-zinc-900 dark:text-zinc-100">
             2+
           </h2>
@@ -49,7 +49,7 @@ const AboutPage = () => {
             Years experience
           </p>
         </div>
-        <div className="grid h-28 w-40 place-items-center">
+        <div className="grid place-items-center">
           <h2 className="text-5xl leading-normal text-zinc-900 dark:text-zinc-100">
             8+
           </h2>
@@ -57,7 +57,7 @@ const AboutPage = () => {
             Languages
           </p>
         </div>
-        <div className="grid h-28 w-40 place-items-center">
+        <div className="grid place-items-center">
           <h2 className="text-5xl leading-normal text-zinc-900 dark:text-zinc-100">
             20+
           </h2>
@@ -109,7 +109,7 @@ const AboutPage = () => {
           />
         </div>
         <h3 className="">Back-end tools and frameworks</h3>
-        <div className="flex max-w-2xl flex-wrap items-center justify-center gap-3 p-8 sm:gap-6">
+        <div className="flex max-w-3xl flex-wrap items-center justify-center gap-3 p-8 sm:gap-6">
           <LanguageCard title="Node.js" icon={<NodejsOriginal size={64} />} />
           <LanguageCard title="Express" icon={<ExpressIcon />} />
           <LanguageCard title="NestJS" icon={<NestjsPlain size={64} />} />
@@ -140,7 +140,7 @@ const AboutPage = () => {
           />
         </div>
         <h3>Databases</h3>
-        <div className="flex max-w-2xl flex-wrap items-center justify-center gap-3 p-8 sm:gap-6">
+        <div className="flex max-w-3xl flex-wrap items-center justify-center gap-3 p-8 sm:gap-6">
           <LanguageCard
             title="PostgresSQL"
             icon={<PostgresqlOriginal size={64} />}
@@ -149,23 +149,20 @@ const AboutPage = () => {
           <LanguageCard title="MongoDB" icon={<MongodbOriginal size={64} />} />
         </div>
         <h3>Mobile development</h3>
-        <div className="flex max-w-2xl flex-wrap items-center justify-center gap-3 p-8 sm:gap-6">
+        <div className="flex max-w-3xl flex-wrap items-center justify-center gap-3 p-8 sm:gap-6">
           <LanguageCard
             title="React Native"
             icon={<ReactOriginal size={64} />}
           />
           <LanguageCard title="Expo" icon={<ExpoIcon />} />
         </div>
-        <h3>Low-level languages where performance matters most</h3>
-        <div className="flex max-w-2xl flex-wrap items-center justify-center gap-3 p-8 sm:gap-6">
+        <h3 className="">Other languages I&apos;ve dabbled in</h3>
+        <div className="flex max-w-3xl flex-wrap items-center justify-center gap-3 p-8 sm:gap-6">
           <LanguageCard title="C" icon={<COriginal size={64} />} />
           <LanguageCard title="C++" icon={<CplusplusOriginal size={64} />} />
-        </div>
-        <h3 className="">Other languages I&apos;ve dabbled in</h3>
-        <div className="flex max-w-2xl flex-wrap items-center justify-center gap-3 p-8 sm:gap-6">
-          <LanguageCard title="Scala" icon={<ScalaOriginal size={64} />} />
           <LanguageCard title="Java" icon={<JavaOriginal size={64} />} />
           <LanguageCard title="Python" icon={<PythonOriginal size={64} />} />
+          <LanguageCard title="Scala" icon={<ScalaOriginal size={64} />} />
         </div>
       </div>
     </section>
