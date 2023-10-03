@@ -1,6 +1,12 @@
-const ProjectPage = () => {
+import { sanityFetch } from "@/sanity/lib/fetch";
+import { getProjects } from "@/sanity/lib/queries";
+import { SanityDocument } from "sanity";
+
+const ProjectPage = async () => {
+  const projects = await sanityFetch<SanityDocument[]>({ query: getProjects });
+
   return (
-    <div>ProjectPage</div>
+    <pre>{JSON.stringify(projects, null, 2)}</pre>
   )
 }
 
