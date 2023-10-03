@@ -1,13 +1,13 @@
 "use client";
 
+import { sendMessage } from "./actions";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Button } from "@nextui-org/button";
 import { Card, CardBody, CardHeader } from "@nextui-org/card";
 import { Input } from "@nextui-org/input";
 import { Textarea } from "@nextui-org/input";
-import { SendHorizontal } from "lucide-react";
+import { Check, SendHorizontal } from "lucide-react";
 import { SubmitHandler, useForm } from "react-hook-form";
-import { sendMessage } from "./actions";
 import { z } from "zod";
 
 export const messageSchema = z.object({
@@ -24,13 +24,13 @@ const ContactPage = () => {
   const {
     register,
     handleSubmit,
-    formState: { errors },
+    formState: { isLoading, errors, isSubmitSuccessful },
   } = useForm<Message>({
     resolver: zodResolver(messageSchema),
   });
 
   const onSubmit: SubmitHandler<Message> = (data) => {
-    sendMessage(data)
+    sendMessage(data);
   };
 
   return (
@@ -101,8 +101,14 @@ const ContactPage = () => {
             }
             {...register("message")}
           />
-          <Button type="submit" color="danger" endContent={<SendHorizontal />}>
-            Send message
+          <Button
+            type="submit"
+            color="danger"
+            endContent={isSubmitSuccessful ? <Check /> : <SendHorizontal />}
+            isLoading={isLoading}
+            disabled={isLoading || isSubmitSuccessful}
+          >
+            {isSubmitSuccessful ? 'Sent' : 'Send message'}
           </Button>
         </form>
       </CardBody>
