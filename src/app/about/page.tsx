@@ -31,17 +31,7 @@ import Image from "next/image";
 
 const AboutPage = () => {
   return (
-    <section className="space-y-6 pb-8 pt-6 md:pb-12 md:pt-10 lg:py-40">
-      <div className="container flex min-w-full flex-col items-center gap-4 text-center">
-        <h1 className="text-2xl font-bold sm:text-4xl md:text-5xl lg:text-6xl">
-          About
-        </h1>
-        <p className="p-4 sm:text-lg sm:leading-8 lg:px-48">
-          I am a Software Engineer with a passion for building high quality,
-          scalable and maintainable software. I have a keen interest in learning
-          new technologies and applying them to solve real world problems.
-        </p>
-      </div>
+    <>
       <div className="grid grid-cols-3 place-items-center pt-16 text-center md:px-32">
         <div className="grid place-items-center">
           <h2 className="text-5xl leading-normal text-zinc-900 dark:text-zinc-100">
@@ -158,7 +148,10 @@ const AboutPage = () => {
             icon={<ReactOriginal size={64} />}
           />
           <LanguageCard title="Expo" icon={<ExpoIcon />} />
-          <LanguageCard title="Electron" icon={<ElectronOriginal size={64} />} />
+          <LanguageCard
+            title="Electron"
+            icon={<ElectronOriginal size={64} />}
+          />
         </div>
         <h3 className="">Other languages I&apos;ve dabbled in</h3>
         <div className="flex max-w-3xl flex-wrap items-center justify-center gap-3 p-8 sm:gap-6">
@@ -169,7 +162,7 @@ const AboutPage = () => {
           <LanguageCard title="Scala" icon={<ScalaOriginal size={64} />} />
         </div>
       </div>
-    </section>
+    </>
   );
 };
 

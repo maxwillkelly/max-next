@@ -41,7 +41,7 @@ const ContactPage = () => {
 
   useEffect(() => {
     reset(undefined, { keepIsSubmitted: true });
-  }, [isSubmitSuccessful]);
+  }, [isSubmitSuccessful, reset]);
 
   const onSubmit: SubmitHandler<Message> = (data) => {
     sendMessage(data);
