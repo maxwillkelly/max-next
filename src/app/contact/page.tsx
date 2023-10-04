@@ -7,7 +7,9 @@ import { Card, CardBody, CardHeader } from "@nextui-org/card";
 import { Input } from "@nextui-org/input";
 import { Textarea } from "@nextui-org/input";
 import { Check, SendHorizontal } from "lucide-react";
+import { useEffect } from "react";
 import { SubmitHandler, useForm } from "react-hook-form";
+import useFormPersist from "react-hook-form-persist";
 import { z } from "zod";
 
 export const messageSchema = z.object({
@@ -24,10 +26,22 @@ const ContactPage = () => {
   const {
     register,
     handleSubmit,
-    formState: { isLoading, errors, isSubmitSuccessful },
+    watch,
+    setValue,
+    reset,
+    formState: { isLoading, errors, isSubmitSuccessful,  },
   } = useForm<Message>({
     resolver: zodResolver(messageSchema),
   });
+
+  useFormPersist("contact-me-form", {
+    watch,
+    setValue,
+  });
+
+  useEffect(() => {
+    reset(undefined, { keepIsSubmitted: true });
+  }, [isSubmitSuccessful]);
 
   const onSubmit: SubmitHandler<Message> = (data) => {
     sendMessage(data);
@@ -108,7 +122,7 @@ const ContactPage = () => {
             isLoading={isLoading}
             disabled={isLoading || isSubmitSuccessful}
           >
-            {isSubmitSuccessful ? 'Sent' : 'Send message'}
+            {isSubmitSuccessful ? "Sent" : "Send message"}
           </Button>
         </form>
       </CardBody>
