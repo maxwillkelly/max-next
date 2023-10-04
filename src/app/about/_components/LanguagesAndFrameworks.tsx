@@ -3,7 +3,7 @@ import GraphQLIcon from "./languages/GraphQLIcon";
 import GrpcIcon from "./languages/GrpcIcon";
 import LanguageCard from "./languages/LanguageCard";
 import NextjsIcon from "./languages/NextjsIcon";
-import ExpoIcon from "@/app/about/_components/languages/ExpoIcon";
+import ExpoIcon from "./languages/ExpoIcon";
 import {
   JavascriptOriginal,
   TypescriptOriginal,
