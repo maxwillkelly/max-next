@@ -1,6 +1,7 @@
 "use client";
 
 import { Card, CardBody, CardHeader } from "@nextui-org/card";
+import { Chip } from "@nextui-org/chip";
 import { Tabs, Tab } from "@nextui-org/tabs";
 import { Briefcase, GraduationCap } from "lucide-react";
 import { useSearchParams, useRouter } from "next/navigation";
@@ -69,6 +70,32 @@ const ExperiencePage = () => {
                   Quisquam necessitatibus incidunt ut officiis explicabo
                   inventore.
                 </p>
+                <div className="mt-4 flex flex-wrap items-center justify-center gap-3">
+                  <Chip variant="dot" color="danger">
+                    JavaScript
+                  </Chip>
+                  <Chip variant="dot" color="danger">
+                    TypeScript
+                  </Chip>
+                  <Chip variant="dot" color="danger">
+                    React
+                  </Chip>
+                  <Chip variant="dot" color="danger">
+                    Next.js
+                  </Chip>
+                  <Chip variant="dot" color="danger">
+                    Node.js
+                  </Chip>
+                  <Chip variant="dot" color="danger">
+                    GraphQL
+                  </Chip>
+                  <Chip variant="dot" color="danger">
+                    gRPC
+                  </Chip>
+                  <Chip variant="dot" color="danger">
+                    MongoDB
+                  </Chip>
+                </div>
               </CardBody>
             </Card>
           </div>
@@ -92,6 +119,29 @@ const ExperiencePage = () => {
                   Quisquam necessitatibus incidunt ut officiis explicabo
                   inventore.
                 </p>
+                <div className="mt-4 flex flex-wrap items-center justify-center gap-3">
+                  <Chip variant="dot" color="danger">
+                    JavaScript
+                  </Chip>
+                  <Chip variant="dot" color="danger">
+                    Vue.js
+                  </Chip>
+                  <Chip variant="dot" color="danger">
+                    C#
+                  </Chip>
+                  <Chip variant="dot" color="danger">
+                    .NET
+                  </Chip>
+                  <Chip variant="dot" color="danger">
+                    MySQL
+                  </Chip>
+                  <Chip variant="dot" color="danger">
+                    Docker
+                  </Chip>
+                  <Chip variant="dot" color="danger">
+                    React
+                  </Chip>
+                </div>
               </CardBody>
             </Card>
           </div>
@@ -128,6 +178,74 @@ const ExperiencePage = () => {
                 Quisquam necessitatibus incidunt ut officiis explicabo
                 inventore.
               </p>
+              <div className="mt-4 flex flex-wrap items-center justify-center gap-3">
+                <Chip variant="dot" color="danger">
+                  JavaScript
+                </Chip>
+                <Chip variant="dot" color="danger">
+                  TypeScript
+                </Chip>
+                <Chip variant="dot" color="danger">
+                  React
+                </Chip>
+                <Chip variant="dot" color="danger">
+                  Vue.js
+                </Chip>
+                <Chip variant="dot" color="danger">
+                  C#
+                </Chip>
+                <Chip variant="dot" color="danger">
+                  .NET
+                </Chip>
+                <Chip variant="dot" color="danger">
+                  MySQL
+                </Chip>
+                <Chip variant="dot" color="danger">
+                  PostgresSQL
+                </Chip>
+                <Chip variant="dot" color="danger">
+                  Tailwind CSS
+                </Chip>
+                <Chip variant="dot" color="danger">
+                  Node.js
+                </Chip>
+                <Chip variant="dot" color="danger">
+                  Express
+                </Chip>
+                <Chip variant="dot" color="danger">
+                  NestJS
+                </Chip>
+                <Chip variant="dot" color="danger">
+                  GraphQL
+                </Chip>
+                <Chip variant="dot" color="danger">
+                  Docker
+                </Chip>
+                <Chip variant="dot" color="danger">
+                  React Native
+                </Chip>
+                <Chip variant="dot" color="danger">
+                  Expo
+                </Chip>
+                <Chip variant="dot" color="danger">
+                  Electron
+                </Chip>
+                <Chip variant="dot" color="danger">
+                  C{" "}
+                </Chip>
+                <Chip variant="dot" color="danger">
+                  C++
+                </Chip>
+                <Chip variant="dot" color="danger">
+                  Java
+                </Chip>
+                <Chip variant="dot" color="danger">
+                  Python
+                </Chip>
+                <Chip variant="dot" color="danger">
+                  Scala
+                </Chip>
+              </div>
             </CardBody>
           </Card>
         </div>

@@ -9,6 +9,8 @@ import {
   COriginal,
   CplusplusOriginal,
   CsharpOriginal,
+  DockerOriginal,
+  ElectronOriginal,
   JavaOriginal,
   JavascriptOriginal,
   MongodbOriginal,
@@ -131,6 +133,7 @@ const AboutPage = () => {
             }
           />
           <LanguageCard title="gRPC" icon={<GrpcIcon />} />
+          <LanguageCard title="Docker" icon={<DockerOriginal size={64} />} />
           <LanguageCard title="C#" icon={<CsharpOriginal size={64} />} />
           <LanguageCard
             title=".NET"
@@ -148,13 +151,14 @@ const AboutPage = () => {
           <LanguageCard title="MySQL" icon={<MysqlOriginal size={64} />} />
           <LanguageCard title="MongoDB" icon={<MongodbOriginal size={64} />} />
         </div>
-        <h3>Mobile development</h3>
+        <h3>Mobile and native development</h3>
         <div className="flex max-w-3xl flex-wrap items-center justify-center gap-3 p-8 sm:gap-6">
           <LanguageCard
             title="React Native"
             icon={<ReactOriginal size={64} />}
           />
           <LanguageCard title="Expo" icon={<ExpoIcon />} />
+          <LanguageCard title="Electron" icon={<ElectronOriginal size={64} />} />
         </div>
         <h3 className="">Other languages I&apos;ve dabbled in</h3>
         <div className="flex max-w-3xl flex-wrap items-center justify-center gap-3 p-8 sm:gap-6">
