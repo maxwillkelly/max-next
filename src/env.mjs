@@ -8,7 +8,7 @@ export const env = createEnv({
     SANITY_API_READ_TOKEN: z.string().min(1),
   },
   client: {
-    NEXT_PUBLIC_SANITY_API_VERSION: z.string().default('2023-10-01'),
+    NEXT_PUBLIC_SANITY_API_VERSION: z.string().default('v2021-10-21'),
     NEXT_PUBLIC_SANITY_PROJECT_ID: z.string().min(1),
     NEXT_PUBLIC_SANITY_DATASET: z.string().min(1),
   },
