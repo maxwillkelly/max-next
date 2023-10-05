@@ -1,7 +1,7 @@
 import "./globals.css";
 import { Providers } from "./providers";
 import { cn } from "./utils";
-import Navigation from "@/components/Navigation";
+import Navigation from "@/app/_components/Navigation";
 import type { Metadata } from "next";
 import { Raleway } from "next/font/google";
 

@@ -1,4 +1,4 @@
-import { Message } from "@/app/contact/page";
+import { ContactMessage } from "@/shared/contactMessage";
 import { Body } from "@react-email/body";
 import { Button } from "@react-email/button";
 import { Container } from "@react-email/container";
@@ -13,12 +13,12 @@ import { Text } from "@react-email/text";
 import * as React from "react";
 
 interface Props {
-  message?: Message;
+  contactMessage?: ContactMessage;
   nodeEnv?: "development" | "production";
 }
 
 const ContactEmailTemplate = ({
-  message = {
+  contactMessage = {
     firstName: "John",
     lastName: "Smith",
     email: "john.smith@gmail.com",
@@ -33,7 +33,7 @@ const ContactEmailTemplate = ({
     email,
     subtitle,
     message: messageBody,
-  } = message;
+  } = contactMessage;
   const isDevelopment = nodeEnv === "development";
   const mailtoLink = `mailto:${email}?subject=Re: ${subtitle}`;
 

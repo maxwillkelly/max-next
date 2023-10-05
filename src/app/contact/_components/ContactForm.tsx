@@ -1,34 +1,24 @@
-import { sendMessage } from "../actions";
+import { trpc } from "@/app/_trpc/client";
+import { ContactMessage, contactMessageSchema } from "@/shared/contactMessage";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Button } from "@nextui-org/button";
 import { Input } from "@nextui-org/input";
 import { Textarea } from "@nextui-org/input";
 import { Check, SendHorizontal } from "lucide-react";
-import { useEffect } from "react";
 import { SubmitHandler, useForm } from "react-hook-form";
 import useFormPersist from "react-hook-form-persist";
-import { z } from "zod";
-
-export const messageSchema = z.object({
-  firstName: z.string().min(1, "First name is required"),
-  lastName: z.string().min(1, "Last name is required"),
-  email: z.string().email(),
-  subtitle: z.string().min(1, "Subtitle is required"),
-  message: z.string().min(1, "Message is required"),
-});
-
-export type Message = z.infer<typeof messageSchema>;
 
 const ContactForm = () => {
+  const contactFormMutation = trpc.sendContactMessage.useMutation();
+
   const {
     register,
     handleSubmit,
     watch,
     setValue,
-    reset,
-    formState: { isLoading, errors, isSubmitSuccessful },
-  } = useForm<Message>({
-    resolver: zodResolver(messageSchema),
+    formState: { errors },
+  } = useForm<ContactMessage>({
+    resolver: zodResolver(contactMessageSchema),
   });
 
   useFormPersist("contact-me-form", {
@@ -36,12 +26,8 @@ const ContactForm = () => {
     setValue,
   });
 
-  useEffect(() => {
-    reset(undefined, { keepIsSubmitted: true });
-  }, [isSubmitSuccessful, reset]);
-
-  const onSubmit: SubmitHandler<Message> = (data) => {
-    sendMessage(data);
+  const onSubmit: SubmitHandler<ContactMessage> = (data) => {
+    contactFormMutation.mutate({ contactMessage: data });
   };
 
   return (
@@ -99,11 +85,11 @@ const ContactForm = () => {
       <Button
         type="submit"
         color="danger"
-        endContent={isSubmitSuccessful ? <Check /> : <SendHorizontal />}
-        isLoading={isLoading}
-        disabled={isLoading || isSubmitSuccessful}
+        endContent={contactFormMutation.isSuccess ? <Check /> : <SendHorizontal />}
+        isLoading={contactFormMutation.isLoading}
+        disabled={contactFormMutation.isLoading || contactFormMutation.isSuccess}
       >
-        {isSubmitSuccessful ? "Sent" : "Send message"}
+        {contactFormMutation.isSuccess ? "Sent" : "Send message"}
       </Button>
     </form>
   );
