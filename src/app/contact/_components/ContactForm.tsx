@@ -85,11 +85,19 @@ const ContactForm = () => {
       <Button
         type="submit"
         color="danger"
-        endContent={contactFormMutation.isSuccess ? <Check /> : <SendHorizontal />}
+        endContent={
+          contactFormMutation.isSuccess ? <Check /> : <SendHorizontal />
+        }
         isLoading={contactFormMutation.isLoading}
-        disabled={contactFormMutation.isLoading || contactFormMutation.isSuccess}
+        disabled={
+          contactFormMutation.isLoading || contactFormMutation.isSuccess
+        }
       >
-        {contactFormMutation.isSuccess ? "Sent" : "Send message"}
+        {contactFormMutation.isIdle && "Send message"}
+        {contactFormMutation.isLoading && "Sending..."}
+        {contactFormMutation.isError &&
+          "Failed to send message, click to retry"}
+        {contactFormMutation.isSuccess && "Sent"}
       </Button>
     </form>
   );

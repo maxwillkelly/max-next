@@ -2,6 +2,7 @@ import { publicProcedure, router } from "./trpc";
 import ContactEmailTemplate from "@/emails/ContactEmailTemplate";
 import { env } from "@/env.mjs";
 import { contactMessageSchema } from "@/shared/contactMessage";
+import { TRPCError } from "@trpc/server";
 import { Resend } from "resend";
 import { z } from "zod";
 
@@ -11,7 +12,7 @@ export const appRouter = router({
   sendContactMessage: publicProcedure
     .input(z.object({ contactMessage: contactMessageSchema }))
     .mutation(async ({ input: { contactMessage } }) => {
-      const { firstName, lastName, message } = contactMessage;
+      const { firstName, lastName } = contactMessage;
 
       const data = await resend.emails.send({
         from: "Max Next <onboarding@resend.dev>",
