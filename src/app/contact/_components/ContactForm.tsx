@@ -17,6 +17,7 @@ const ContactForm = () => {
     watch,
     setValue,
     formState: { errors },
+    reset,
   } = useForm<ContactMessage>({
     resolver: zodResolver(contactMessageSchema),
   });
@@ -26,8 +27,9 @@ const ContactForm = () => {
     setValue,
   });
 
-  const onSubmit: SubmitHandler<ContactMessage> = (data) => {
-    contactFormMutation.mutate({ contactMessage: data });
+  const onSubmit: SubmitHandler<ContactMessage> = async (data) => {
+    await contactFormMutation.mutateAsync({ contactMessage: data });
+    reset();
   };
 
   return (
