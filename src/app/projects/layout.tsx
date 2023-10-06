@@ -6,9 +6,9 @@ const ProjectsLayout = ({ children }: { children: React.ReactNode }) => {
             Projects
           </h1>
           <p className="max-w-6xl sm:text-lg sm:leading-8 lg:px-48">
-            Subtitle
+            Check out what I&apos;ve been up to
           </p>
-          <div className="pt-2">{children}</div>
+          <div className="flex flex-1 pt-2">{children}</div>
         </div>
       </section>
     );
