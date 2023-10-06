@@ -25,10 +25,11 @@ const ProjectCard = ({ project }: Props) => {
       radius="lg"
       isFooterBlurred
       fullWidth={true}
+      isPressable
     >
       <Image
         as={NextImage}
-        className="h-48 w-full rounded-b-none object-cover"
+        className="w-full rounded-b-none object-cover"
         src="/hero-card-complete.jpeg"
         width={384}
         height={192}
@@ -50,11 +51,11 @@ const ProjectCard = ({ project }: Props) => {
           </p>
         )}
         <div className="mb-2 mt-4 flex flex-wrap items-center gap-3">
-          {frameworks?.map((framework) => (
+          {/* {frameworks?.map((framework) => (
             <Chip key={framework} variant="dot" color="danger">
               {framework}
             </Chip>
-          ))}
+          ))} */}
         </div>
         <p className="text-left text-sm text-gray-500 dark:text-gray-400">
           {body}

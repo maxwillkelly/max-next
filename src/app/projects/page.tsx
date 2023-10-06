@@ -53,7 +53,8 @@ const projects: Project[] = [
   },
   {
     id: "8",
-    title: "First year personal website (maxwillkelly.github.io)",
+    title: "First year personal website",
+    name: "maxwillkelly.github.io",
     body: "A personal website written in HTML, CSS and Jekyll.",
     language: "HTML",
     frameworks: ["Jekyll"],
