@@ -84,7 +84,7 @@ const Navigation = () => {
           ))}
         </NavbarMenu>
       </NavbarContent>
-      <NavbarContent justify="end">
+      <NavbarContent className="hidden xs:flex" justify="end">
         <Tooltip content="Download CV" placement="bottom">
           <Button
             as={Link}
