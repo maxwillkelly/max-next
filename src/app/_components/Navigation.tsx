@@ -75,6 +75,7 @@ const Navigation = () => {
             <NavbarMenuItem key={link.name}>
               <CombinedLink
                 className="w-full"
+                color="foreground"
                 link={link}
                 size="lg"
                 onClick={() => setIsMenuOpen(false)}
