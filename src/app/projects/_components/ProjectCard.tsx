@@ -1,20 +1,20 @@
-"use client";
-
 import { Card, CardFooter } from "@nextui-org/card";
 import { Chip } from "@nextui-org/chip";
 import { Image } from "@nextui-org/image";
+import { q, Selection, type TypeFromSelection } from "groqd";
 import NextImage from "next/image";
 import NextLink from "next/link";
-import { useRouter } from "next/navigation";
-import { SanityDocument } from "sanity";
 
-export interface Project extends SanityDocument {
-  title: string;
-  name?: string;
-  body: string;
-  language: string;
-  frameworks?: string[];
-}
+export const projectSelection = {
+  _id: q.string().uuid(),
+  title: q.string().nullable(),
+  name: q.string().nullable(),
+  body: q.string().nullable(),
+  language: q.string().nullable(),
+  frameworks: q.string().array().nullable(),
+} satisfies Selection;
+
+type Project = TypeFromSelection<typeof projectSelection>;
 
 interface Props {
   project: Project;
@@ -22,8 +22,6 @@ interface Props {
 
 const ProjectCard = ({ project }: Props) => {
   const { title, name, body, language, frameworks } = project;
-
-  const router = useRouter();
 
   return (
     <Card
