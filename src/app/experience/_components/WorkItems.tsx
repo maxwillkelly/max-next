@@ -4,7 +4,7 @@ import { Chip } from "@nextui-org/chip";
 const WorkItems = () => (
   <div className="relative space-y-8 p-8 before:absolute before:inset-0 before:ml-5 before:h-full before:w-0.5 before:-translate-x-px before:bg-gradient-to-b before:from-transparent before:via-danger before:to-transparent md:before:mx-auto md:before:translate-x-0">
     <div className="group relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse">
-      <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-danger text-slate-50 shadow md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2"></div>
+      <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-danger text-slate-50 shadow md:order-1 md:h-10 md:w-10 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2"></div>
       <Card className="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)]">
         <CardHeader className="flex flex-col space-y-2">
           <h3 className="text-lg font-medium leading-6 text-gray-900 dark:text-gray-100">
@@ -52,7 +52,7 @@ const WorkItems = () => (
       </Card>
     </div>
     <div className="group relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse">
-      <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-danger text-slate-50 shadow md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2"></div>
+      <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-danger text-slate-50 shadow md:order-1 md:h-10 md:w-10 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2"></div>
       <Card className="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)]">
         <CardHeader className="flex flex-col space-y-2">
           <h3 className="text-lg font-medium leading-6 text-gray-900 dark:text-gray-100">

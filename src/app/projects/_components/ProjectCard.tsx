@@ -1,7 +1,11 @@
+'use client';
+
 import { Card, CardFooter } from "@nextui-org/card";
 import { Chip } from "@nextui-org/chip";
 import { Image } from "@nextui-org/image";
 import NextImage from "next/image";
+import NextLink from "next/link";
+import { useRouter } from "next/navigation";
 
 export type Project = {
   id: string;
@@ -19,13 +23,17 @@ interface Props {
 const ProjectCard = ({ project }: Props) => {
   const { title, name, body, language, frameworks } = project;
 
+  const router = useRouter();
+
   return (
     <Card
+      as={NextLink}
       className="flex w-96 overflow-hidden border-none"
       radius="lg"
       isFooterBlurred
       fullWidth={true}
       isPressable
+      href={`/projects/${project.id}`}
     >
       <Image
         as={NextImage}
