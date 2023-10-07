@@ -1,4 +1,4 @@
-'use client';
+"use client";
 
 import { Card, CardFooter } from "@nextui-org/card";
 import { Chip } from "@nextui-org/chip";
@@ -6,15 +6,15 @@ import { Image } from "@nextui-org/image";
 import NextImage from "next/image";
 import NextLink from "next/link";
 import { useRouter } from "next/navigation";
+import { SanityDocument } from "sanity";
 
-export type Project = {
-  id: string;
+export interface Project extends SanityDocument {
   title: string;
   name?: string;
   body: string;
   language: string;
   frameworks?: string[];
-};
+}
 
 interface Props {
   project: Project;
@@ -33,7 +33,7 @@ const ProjectCard = ({ project }: Props) => {
       isFooterBlurred
       fullWidth={true}
       isPressable
-      href={`/projects/${project.id}`}
+      href={`/projects/${project._id}`}
     >
       <Image
         as={NextImage}
