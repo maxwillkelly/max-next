@@ -2,7 +2,6 @@ import { publicProcedure, router } from "./trpc";
 import ContactEmailTemplate from "@/emails/ContactEmailTemplate";
 import { env } from "@/env.mjs";
 import { contactMessageSchema } from "@/shared/contactMessage";
-import { TRPCError } from "@trpc/server";
 import { Resend } from "resend";
 import { z } from "zod";
 
