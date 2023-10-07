@@ -1,17 +1,10 @@
-import ProjectCard from "./_components/ProjectCard";
+import ProjectCard, { projectSelection } from "./_components/ProjectCard";
 import { runQuery } from "@/sanity/lib/fetch";
 import { q } from "groqd";
 
 const ProjectPage = async () => {
   const sanityProjects = await runQuery(
-    q("*").filter("_type == 'project'").grab({
-      _id: q.string().uuid(),
-      title: q.string().nullable(),
-      name: q.string().nullable(),
-      body: q.string().nullable(),
-      language: q.string().nullable(),
-      frameworks: q.string().array().nullable(),
-    }),
+    q("*").filter("_type == 'project'").grab(projectSelection),
   );
 
   return (

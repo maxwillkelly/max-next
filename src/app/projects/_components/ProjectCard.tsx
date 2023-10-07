@@ -7,10 +7,11 @@ import NextLink from "next/link";
 
 export const projectSelection = {
   _id: q.string().uuid(),
-  title: q.string().nullable(),
+  slug: q.slug('slug'),
+  title: q.string(),
   name: q.string().nullable(),
-  body: q.string().nullable(),
-  language: q.string().nullable(),
+  body: q.string(),
+  language: q.string(),
   frameworks: q.string().array().nullable(),
 } satisfies Selection;
 
@@ -21,7 +22,7 @@ interface Props {
 }
 
 const ProjectCard = ({ project }: Props) => {
-  const { title, name, body, language, frameworks } = project;
+  const { slug, title, name, body, language, frameworks } = project;
 
   return (
     <Card
@@ -31,7 +32,7 @@ const ProjectCard = ({ project }: Props) => {
       isFooterBlurred
       fullWidth={true}
       isPressable
-      href={`/projects/${project._id}`}
+      href={`/projects/${slug}`}
     >
       <Image
         as={NextImage}
