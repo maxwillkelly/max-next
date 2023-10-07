@@ -1,12 +1,35 @@
 "use client";
 
+import { trpc } from "./_trpc/client";
 import { NextUIProvider } from "@nextui-org/react";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import { httpBatchLink } from "@trpc/client";
 import { ThemeProvider } from "next-themes";
+import { useState } from "react";
 
 export function Providers({ children }: { children: React.ReactNode }) {
+  const [queryClient] = useState(() => new QueryClient());
+  const [trpcClient] = useState(() =>
+    trpc.createClient({
+      links: [
+        httpBatchLink({
+          url: "/api/trpc",
+        }),
+      ],
+    }),
+  );
+
   return (
-    <ThemeProvider attribute="class" defaultTheme="system" enableSystem={true}>
-      <NextUIProvider className="min-h-screen">{children}</NextUIProvider>
-    </ThemeProvider>
+    <trpc.Provider client={trpcClient} queryClient={queryClient}>
+      <QueryClientProvider client={queryClient}>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem={true}
+        >
+          <NextUIProvider className="min-h-screen">{children}</NextUIProvider>
+        </ThemeProvider>
+      </QueryClientProvider>
+    </trpc.Provider>
   );
 }

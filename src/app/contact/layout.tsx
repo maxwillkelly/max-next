@@ -15,7 +15,7 @@ const ContactLayout = ({ children }: { children: React.ReactNode }) => {
           </Link>{" "}
           or use this form below to send me a message.
         </p>
-        <>{children}</>
+        {children}
       </div>
     </section>
   );

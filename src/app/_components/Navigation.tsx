@@ -75,6 +75,7 @@ const Navigation = () => {
             <NavbarMenuItem key={link.name}>
               <CombinedLink
                 className="w-full"
+                color="foreground"
                 link={link}
                 size="lg"
                 onClick={() => setIsMenuOpen(false)}
@@ -83,7 +84,7 @@ const Navigation = () => {
           ))}
         </NavbarMenu>
       </NavbarContent>
-      <NavbarContent justify="end">
+      <NavbarContent className="hidden xs:flex" justify="end">
         <Tooltip content="Download CV" placement="bottom">
           <Button
             as={Link}
