@@ -1,28 +1,16 @@
 import { Card, CardFooter } from "@nextui-org/card";
 import { Chip } from "@nextui-org/chip";
 import { Image } from "@nextui-org/image";
-import { q, Selection, type TypeFromSelection } from "groqd";
 import NextImage from "next/image";
 import NextLink from "next/link";
-
-export const projectSelection = {
-  _id: q.string().uuid(),
-  slug: q.slug('slug'),
-  title: q.string(),
-  name: q.string().nullable(),
-  body: q.string(),
-  language: q.string(),
-  frameworks: q.string().array().nullable(),
-} satisfies Selection;
-
-type Project = TypeFromSelection<typeof projectSelection>;
+import { Project } from "../types";
 
 interface Props {
   project: Project;
 }
 
 const ProjectCard = ({ project }: Props) => {
-  const { slug, title, name, body, language, frameworks } = project;
+  const { slug, title, name, body, language } = project;
 
   return (
     <Card

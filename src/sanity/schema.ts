@@ -12,6 +12,14 @@ export const ProjectSchema: SchemaTypeDefinition = {
       validation: Rule => Rule.required(),
     },
     {
+      name: 'releaseDate',
+      type: 'date',
+      title: 'Release Date',
+      options: {
+        dateFormat: 'DD/MM/YYYY',
+      }
+    },
+    {
       name: "name",
       type: "string",
       title: "Name",

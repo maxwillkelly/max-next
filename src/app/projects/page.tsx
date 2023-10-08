@@ -1,10 +1,12 @@
-import ProjectCard, { projectSelection } from "./_components/ProjectCard";
+import ProjectCard from "./_components/ProjectCard";
 import { runQuery } from "@/sanity/lib/fetch";
 import { q } from "groqd";
+import { groq } from "next-sanity";
+import { projectSelection } from "./types";
 
 const ProjectPage = async () => {
-  const sanityProjects = await runQuery(
-    q("*").filter("_type == 'project'").grab(projectSelection),
+  const projects = await runQuery(
+    q(groq`*[_type == "project"] | order(releaseDate desc)`, { isArray: true }).grab(projectSelection),
   );
 
   return (
@@ -18,7 +20,7 @@ const ProjectPage = async () => {
         </p>
         <div className="flex flex-1 pt-2">
           <div className="container flex flex-wrap justify-center gap-9">
-            {sanityProjects.map((project) => (
+            {projects.map((project) => (
               <ProjectCard key={project._id} project={project} />
             ))}
           </div>
