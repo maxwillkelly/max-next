@@ -27,7 +27,7 @@ export function Providers({ children }: { children: React.ReactNode }) {
           defaultTheme="system"
           enableSystem={true}
         >
-          <NextUIProvider className="min-h-screen">{children}</NextUIProvider>
+          <NextUIProvider className="flex flex-col h-screen w-screen">{children}</NextUIProvider>
         </ThemeProvider>
       </QueryClientProvider>
     </trpc.Provider>

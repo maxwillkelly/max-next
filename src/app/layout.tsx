@@ -21,11 +21,11 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <body
         className={cn(
-          "min-h-screen bg-background font-sans antialiased",
+          "flex h-screen w-screen bg-background font-sans antialiased",
           raleway.className,
         )}
       >
-        <div className="flex min-h-screen flex-col">
+        <div className="flex flex-col h-screen w-screen">
           <Providers>
             <Navigation />
             <main className="flex-1">{children}</main>

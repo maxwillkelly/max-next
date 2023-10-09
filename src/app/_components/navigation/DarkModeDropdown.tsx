@@ -8,7 +8,6 @@ import {
   DropdownTrigger,
 } from "@nextui-org/dropdown";
 import { Skeleton } from "@nextui-org/react";
-// import { Skeleton } from "@nextui-org/skeleton";
 import { Moon, Sun } from "lucide-react";
 import { useTheme } from "next-themes";
 import { useState, useEffect } from "react";
