@@ -12,23 +12,24 @@ export const ProjectSchema: SchemaTypeDefinition = {
       validation: Rule => Rule.required(),
     },
     {
+      name: "slug",
+      type: "slug",
+      title: "Slug",
+      validation: Rule => Rule.required(),
+      options: {
+        source: "title",
+        maxLength: 96,
+        slugify: (input) =>
+          input.toLowerCase().replace(/\s+/g, "-").slice(0, 96),
+      },
+    },
+    {
       name: 'releaseDate',
       type: 'date',
       title: 'Release Date',
       options: {
         dateFormat: 'DD/MM/YYYY',
       }
-    },
-    {
-      name: "name",
-      type: "string",
-      title: "Name",
-    },
-    {
-      name: "body",
-      type: "string",
-      title: "Body",
-      validation: Rule => Rule.required(),
     },
     {
       name: "language",
@@ -49,24 +50,28 @@ export const ProjectSchema: SchemaTypeDefinition = {
       ]
     },
     {
+      name: "subtitle",
+      type: "string",
+      title: "Subtitle",
+    },
+    {
+      name: "body",
+      type: "string",
+      title: "Body",
+      validation: Rule => Rule.required(),
+    },
+    {
+      name: "name",
+      type: "string",
+      title: "Name",
+    },
+    {
       name: "frameworks",
       type: "array",
       title: "Frameworks",
       of: [{ type: "string" }],
       options: {
         layout: "tags",
-      },
-    },
-    {
-      name: "slug",
-      type: "slug",
-      title: "Slug",
-      validation: Rule => Rule.required(),
-      options: {
-        source: "title",
-        maxLength: 96,
-        slugify: (input) =>
-          input.toLowerCase().replace(/\s+/g, "-").slice(0, 96),
       },
     },
   ],
