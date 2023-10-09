@@ -1,16 +1,16 @@
+import { Project } from "../types";
+import CombinedImage from "@/app/_components/CombinedImage";
 import { Card, CardFooter } from "@nextui-org/card";
-import { Chip } from "@nextui-org/chip";
 import { Image } from "@nextui-org/image";
 import NextImage from "next/image";
 import NextLink from "next/link";
-import { Project } from "../types";
 
 interface Props {
   project: Project;
 }
 
 const ProjectCard = ({ project }: Props) => {
-  const { slug, title, name, body, language } = project;
+  const { slug, title, name, body, languageIcon } = project;
 
   return (
     <Card
@@ -31,26 +31,24 @@ const ProjectCard = ({ project }: Props) => {
         shadow="sm"
         alt="Placeholder"
       />
-      <CardFooter className="flex-col items-start">
-        <div className="inline-flex w-full place-content-between">
-          <h3 className="text-left text-xl font-medium leading-6 text-gray-900 dark:text-gray-100">
-            {title}
-          </h3>
-          <Chip key={language} color="danger">
-            {language}
-          </Chip>
-        </div>
-        {name && (
-          <p className="text-left text-sm text-gray-500 dark:text-gray-400">
-            {name}
-          </p>
-        )}
-        <div className="mb-2 mt-4 flex flex-wrap items-center gap-3">
-          {/* {frameworks?.map((framework) => (
-            <Chip key={framework} variant="dot" color="danger">
-              {framework}
-            </Chip>
-          ))} */}
+      <CardFooter className="flex flex-col items-start gap-3">
+        <div className="inline-flex flex-row items-center justify-between w-full">
+          <div>
+            <h3 className="text-left text-xl font-medium leading-6 text-gray-900 dark:text-gray-100">
+              {title}
+            </h3>
+            {name && (
+              <p className="text-left text-sm text-gray-500 dark:text-gray-400">
+                {name}
+              </p>
+            )}
+          </div>
+          <CombinedImage
+            radius="none"
+            src={languageIcon?.asset.url}
+            width={32}
+            height={32}
+          />
         </div>
         <p className="text-left text-sm text-gray-500 dark:text-gray-400">
           {body}

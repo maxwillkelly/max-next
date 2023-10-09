@@ -37,6 +37,18 @@ export const ProjectSchema: SchemaTypeDefinition = {
       validation: Rule => Rule.required(),
     },
     {
+      name: 'languageIcon',
+      type: 'image',
+      title: 'Language Icon',
+      fields: [
+        {
+          name: 'altText',
+          type: 'string',
+          title: 'Alternative Text',
+        }
+      ]
+    },
+    {
       name: "frameworks",
       type: "array",
       title: "Frameworks",
