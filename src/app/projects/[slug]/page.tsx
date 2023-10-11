@@ -1,8 +1,7 @@
 import { projectSelection } from "../types";
+import CombinedImage from "@/app/_components/CombinedImage";
 import { runQuery } from "@/sanity/lib/fetch";
 import { Button } from "@nextui-org/button";
-import { Card, CardBody, CardHeader } from "@nextui-org/card";
-import { Divider } from "@nextui-org/divider";
 import { q } from "groqd";
 import { ArrowLeft } from "lucide-react";
 import { groq } from "next-sanity";
@@ -23,7 +22,7 @@ const ProjectPage = async ({ params }: Props) => {
     ),
   );
 
-  const { title, body } = project;
+  const { title, body, languageIcon, language } = project;
 
   return (
     <section className="space-y-6 pb-8 pt-6 md:pb-12 md:pt-10 lg:py-16">
@@ -39,9 +38,19 @@ const ProjectPage = async ({ params }: Props) => {
           >
             Projects
           </Button>
-          <h1 className="text-xl font-bold sm:text-3xl md:text-4xl lg:text-5xl">
-            {title}
-          </h1>
+          <div className="flex items-center gap-2 w-full">
+            <h1 className="text-xl font-bold sm:text-3xl md:text-4xl lg:text-5xl">
+              {title}
+            </h1>
+              <CombinedImage
+                alt={`${language} logo`}
+                radius="none"
+                src={languageIcon?.asset.url}
+                width={32}
+                height={32}
+                className="h-full w-auto"
+              />
+          </div>
         </div>
         <div>
           <p className="max-w-6xl sm:text-lg sm:leading-8">{body}</p>
