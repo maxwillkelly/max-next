@@ -23,7 +23,7 @@ const WorkItems = () => (
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam
           necessitatibus incidunt ut officiis explicabo inventore.
         </p>
-        <div className="mt-4 flex flex-wrap items-center justify-center gap-3">
+        <div className="mt-5 flex flex-wrap items-center justify-center gap-3">
           <Chip variant="dot" color="danger">
             JavaScript
           </Chip>
@@ -66,10 +66,19 @@ const WorkItems = () => (
         }
       >
         <p className="mt-2 text-sm text-gray-500 dark:text-gray-400">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam
-          necessitatibus incidunt ut officiis explicabo inventore.
+          Initially, I worked as a React developer in tandem with a .NET
+          developer on Udrafter's platform.
+          <br />
+          <br />
+          I later transitioned into the role of a Fullstack engineer
+          independently rewriting the messaging features in their platform.
+          <br />
+          <br />
+          This involved creating a Vue.js front-end and a .NET Core messaging
+          microservice. I then led the team that integrated this service into
+          the main platform.
         </p>
-        <div className="mt-4 flex flex-wrap items-center justify-center gap-3">
+        <div className="mt-5 flex flex-wrap items-center justify-center gap-3">
           <Chip variant="dot" color="danger">
             JavaScript
           </Chip>

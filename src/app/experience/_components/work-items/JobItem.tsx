@@ -13,7 +13,7 @@ const JobItem = ({ headerContent, children }: Props) => {
         <CardHeader className="flex flex-col space-y-2">
           {headerContent}
         </CardHeader>
-        <CardBody>{children}</CardBody>
+        <CardBody className="pt-0">{children}</CardBody>
       </Card>
     </div>
   );
