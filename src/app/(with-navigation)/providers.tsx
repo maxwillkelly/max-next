@@ -1,6 +1,6 @@
 "use client";
 
-import { trpc } from "./_trpc/client";
+import { trpc } from "../_trpc/client";
 import { NextUIProvider } from "@nextui-org/react";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { httpBatchLink } from "@trpc/client";
