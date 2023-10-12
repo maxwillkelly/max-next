@@ -8,7 +8,7 @@ interface Props {
 }
 
 const ProjectCard = ({ project }: Props) => {
-  const { slug, title, subtitle, name, body, languageIcon } = project;
+  const { slug, title, subtitle, language, languageIcon } = project;
 
   return (
     <Card
@@ -37,6 +37,7 @@ const ProjectCard = ({ project }: Props) => {
             </h3>
           </div>
           <CombinedImage
+            alt={`${language} logo`}
             radius="none"
             src={languageIcon?.asset.url}
             width={32}

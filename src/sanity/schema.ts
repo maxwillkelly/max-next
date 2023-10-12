@@ -55,15 +55,25 @@ export const ProjectSchema: SchemaTypeDefinition = {
       title: "Subtitle",
     },
     {
-      name: "body",
-      type: "string",
-      title: "Body",
-      validation: Rule => Rule.required(),
+      title: 'Content', 
+      name: 'content',
+      type: 'array', 
+      of: [{type: 'block'}]
     },
     {
       name: "name",
       type: "string",
       title: "Name",
+    },
+    {
+      name: "github",
+      type: "url",
+      title: "Github Link",
+    },
+    {
+      name: "deployedUrl",
+      type: "url",
+      title: "Deployed URL",
     },
     {
       name: "frameworks",
