@@ -30,7 +30,7 @@ const ProjectCard = ({ project }: Props) => {
         alt="Placeholder"
       /> */}
       <CardFooter className="flex flex-col items-start gap-3">
-        <div className="inline-flex flex-row items-center justify-between w-full">
+        <div className="inline-flex w-full flex-row items-center justify-between">
           <div>
             <h3 className="text-left text-xl font-medium leading-6 text-gray-900 dark:text-gray-100">
               {title}

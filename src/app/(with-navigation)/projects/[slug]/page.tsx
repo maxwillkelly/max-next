@@ -38,7 +38,7 @@ const ProjectPage = async ({ params }: Props) => {
           >
             Projects
           </Button>
-          <div className="flex items-center gap-2 w-full">
+          <div className="flex w-full items-center gap-2">
             <h1 className="text-xl font-bold sm:text-3xl md:text-4xl lg:text-5xl">
               {title}
             </h1>

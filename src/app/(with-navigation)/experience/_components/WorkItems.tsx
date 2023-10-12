@@ -35,7 +35,7 @@ const WorkItems = () => (
         body={
           <>
             Initially, I worked as a React developer in tandem with a .NET
-            developer on Udrafter's platform.
+            developer on Udrafter&apos;s platform.
             <br />
             <br />
             I later transitioned into the role of a Fullstack engineer

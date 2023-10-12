@@ -34,12 +34,12 @@ const TimelineItemCard = ({
         </time>
       </CardHeader>
       <CardBody className="pt-0">
-        <p className="mt-2 text-sm text-left text-gray-500 dark:text-gray-400">
+        <p className="mt-2 text-left text-sm text-gray-500 dark:text-gray-400">
           {body}
         </p>
         <div className="mt-5 flex flex-wrap items-center justify-center gap-3">
           {languagesAndFrameworks?.map((languageOrFramework) => (
-            <Chip variant="dot" color="danger">
+            <Chip key={languageOrFramework} variant="dot" color="danger">
               {languageOrFramework}
             </Chip>
           ))}

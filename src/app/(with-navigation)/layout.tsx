@@ -1,6 +1,6 @@
+import { cn } from "../utils";
 import "./globals.css";
 import { Providers } from "./providers";
-import { cn } from "../utils";
 import Navigation from "@/app/_components/Navigation";
 import type { Metadata } from "next";
 import { Raleway } from "next/font/google";
@@ -25,7 +25,7 @@ export default function NavigationLayout({
           raleway.className,
         )}
       >
-        <div className="flex flex-col h-screen w-screen">
+        <div className="flex h-screen w-screen flex-col">
           <Providers>
             <Navigation />
             <main className="flex-1">{children}</main>

@@ -1,6 +1,8 @@
 {
-  "extends": ["next/core-web-vitals", "plugin:tailwindcss/recommended"],
-  "plugins": ["tailwindcss"],
+  "root": true,
+  "extends": ["next/core-web-vitals", "plugin:@typescript-eslint/recommended", "plugin:tailwindcss/recommended", "prettier"],
+  "parser": "@typescript-eslint/parser",
+  "plugins": ["@typescript-eslint", "tailwindcss"],
   "settings": {
     "tailwindcss": {
       "callees": ["cn"]
