@@ -5,7 +5,25 @@ import Navigation from "@/app/_components/Navigation";
 import type { Metadata } from "next";
 import { Raleway } from "next/font/google";
 
-const raleway = Raleway({ subsets: ["latin"] });
+const raleway = Raleway({
+  subsets: ["latin"],
+  fallback: [
+    "ui-sans-serif",
+    "system-ui",
+    "-apple-system",
+    "BlinkMacSystemFont",
+    "Segoe UI",
+    "Roboto",
+    "Helvetica Neue",
+    "Arial",
+    "Noto Sans",
+    "sans-serif",
+    "Apple Color Emoji",
+    "Segoe UI Emoji",
+    "Segoe UI Symbol",
+    "Noto Color Emoji",
+  ],
+});
 
 export const metadata: Metadata = {
   title: "Max Kelly - Software Engineer",
@@ -21,7 +39,7 @@ export default function NavigationLayout({
     <html lang="en" suppressHydrationWarning>
       <body
         className={cn(
-          "flex h-screen w-screen bg-background font-sans antialiased",
+          "flex h-screen w-screen bg-background text-gray-900 antialiased dark:text-gray-200",
           raleway.className,
         )}
       >
