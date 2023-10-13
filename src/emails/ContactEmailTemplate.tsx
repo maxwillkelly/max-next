@@ -90,9 +90,11 @@ const ContactEmailTemplate = ({
               <Heading as="h3">{subtitle}</Heading>
               <Text>{messageBody}</Text>
             </Section>
-            <Section className="flex items-center justify-center">
+            <Section className="text-center">
               <Button
-                className="relative box-border inline-flex h-10 min-w-max select-none appearance-none items-center justify-center gap-2 overflow-hidden whitespace-nowrap rounded-xl bg-[#f31260] px-4 text-sm font-normal text-white subpixel-antialiased shadow-lg shadow-danger/40 outline-none tap-highlight-transparent"
+                pX={16}
+                pY={10}
+                className="rounded-xl bg-[#f31260] text-sm font-normal text-white subpixel-antialiased shadow-lg shadow-danger/40 outline-none"
                 href={mailtoLink}
               >
                 Reply
