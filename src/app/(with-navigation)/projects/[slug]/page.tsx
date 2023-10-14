@@ -38,8 +38,8 @@ const ProjectPage = async ({ params }: Props) => {
           >
             Projects
           </Button>
-          <div className="flex w-full items-center gap-2">
-            <h1 className="text-xl font-bold sm:text-3xl md:text-4xl lg:text-5xl">
+          <div className="flex w-full items-center gap-2 md:gap-4">
+            <h1 className="text-2xl font-bold sm:text-3xl md:text-4xl lg:text-5xl">
               {title}
             </h1>
               <CombinedImage
@@ -56,13 +56,6 @@ const ProjectPage = async ({ params }: Props) => {
           <p className="max-w-6xl sm:text-lg sm:leading-8">{body}</p>
         </div>
       </div>
-      {/* <h1 className="text-2xl font-bold sm:text-4xl md:text-5xl lg:text-6xl">
-          {title}
-        </h1>
-        <p className="max-w-6xl sm:text-lg sm:leading-8 lg:px-48">{body}</p>
-        <div className="flex flex-1 pt-2">
-          <div>{JSON.stringify(project, null, 2)}</div>
-        </div> */}
     </section>
   );
 };

@@ -30,7 +30,7 @@ import React from "react";
 
 const LanguagesAndFrameworks = () => (
   <div className="container flex min-w-full flex-col items-center gap-4 pt-40 text-center">
-    <h2 className="text-lg font-semibold sm:text-2xl md:text-3xl lg:text-4xl">
+    <h2 className="text-lg font-bold sm:text-2xl md:text-3xl lg:text-4xl">
       Languages and Frameworks
     </h2>
     <p className="p-4 sm:text-lg sm:leading-8 lg:px-48">
