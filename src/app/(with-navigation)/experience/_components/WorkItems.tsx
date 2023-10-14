@@ -5,15 +5,21 @@ const WorkItems = () => (
     <div className="relative space-y-8 before:absolute before:inset-0 before:ml-5 before:h-full before:w-0.5 before:-translate-x-px before:bg-gradient-to-b before:from-transparent before:via-danger before:to-transparent md:before:mx-auto md:before:translate-x-0">
       <JobItem
         employer="The Key Support Services"
-        position="Software Engineer"
+        position="GovernorHub Software Engineer"
         startDate={new Date("2021-06-28")}
         endDate={null}
         body={
           <>
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Optio,
-            eaque! Voluptatum neque blanditiis voluptas voluptatem quidem nihil!
-            Voluptate hic molestiae modi repellendus. Beatae corporis facere
-            dignissimos fuga vero aut ducimus!
+            I work as a Software Engineer on GovernorHub, the leading online
+            service for school governors and trustees.
+            <br />
+            <br />
+            I am responsible for reimplementing a number of features from a
+            monolithic AngularJS codebase into React and gRPC microservices.
+            <br />
+            <br />
+            I&apos;ve also had the opportunity to onboard new developers into an
+            expanding team and write developer specifications for new features.
           </>
         }
         languagesAndFrameworks={[
