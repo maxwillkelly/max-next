@@ -1,6 +1,14 @@
-import ExperienceTabs from "./_components/ExperienceTabs";
+import ExperienceTabs, {
+  ExperienceTabOptions,
+} from "./_components/ExperienceTabs";
 
-const ExperiencePage = () => {
+const ExperiencePage = ({
+  searchParams,
+}: {
+  searchParams: { tab: ExperienceTabOptions | undefined };
+}) => {
+  const { tab } = searchParams;
+
   return (
     <section className="space-y-6 pb-8 pt-6 md:pb-12 md:pt-10 lg:py-16">
       <div className="container flex min-w-full flex-col items-center gap-4 text-center">
@@ -12,7 +20,7 @@ const ExperiencePage = () => {
           school and what I have been up to in my spare time.
         </p>
         <div className="pt-2">
-          <ExperienceTabs />
+          <ExperienceTabs tab={tab} />
         </div>
       </div>
     </section>
