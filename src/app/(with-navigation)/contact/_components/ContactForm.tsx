@@ -1,3 +1,5 @@
+"use client";
+
 import { trpc } from "@/app/_trpc/client";
 import { ContactMessage, contactMessageSchema } from "@/shared/contactMessage";
 import { zodResolver } from "@hookform/resolvers/zod";
