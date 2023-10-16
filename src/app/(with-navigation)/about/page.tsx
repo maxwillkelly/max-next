@@ -16,8 +16,8 @@ const AboutPage = () => {
           scalable and maintainable software. I have a keen interest in learning
           new technologies and applying them to solve real world problems.
         </p>
+        <AboutHero />
       </div>
-      <AboutHero />
       <div className="mt-8 flex flex-1 justify-center">
         <Button
           as={Link}

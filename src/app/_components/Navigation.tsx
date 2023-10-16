@@ -48,18 +48,18 @@ const Navigation = () => {
 
   return (
     <Navbar isMenuOpen={isMenuOpen} onMenuOpenChange={setIsMenuOpen}>
-      <NavbarContent className="sm:hidden" justify="start">
+      <NavbarContent className="md:hidden" justify="start">
         <NavbarMenuToggle
           aria-label={isMenuOpen ? "Close menu" : "Open menu"}
           icon={(isOpen) => (isOpen ? <X /> : <Menu />)}
         />
       </NavbarContent>
-      <NavbarContent className="sm:hidden" justify="center">
+      <NavbarContent className="md:hidden" justify="center">
         <NavbarBrand as={NextLink} href="/">
           <p className="font-bold text-inherit">Max Kelly</p>
         </NavbarBrand>
       </NavbarContent>
-      <NavbarContent className="hidden gap-4 sm:flex" justify="center">
+      <NavbarContent className="hidden gap-4 md:flex" justify="center">
         <NavbarBrand as={NextLink} href="/">
           <p className="font-bold text-inherit">Max Kelly</p>
         </NavbarBrand>
