@@ -37,20 +37,18 @@ export default function NavigationLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" suppressHydrationWarning>
-      <body
-        className={cn(
-          "flex h-screen w-screen bg-background text-gray-900 antialiased dark:text-gray-200",
-          raleway.className,
-        )}
-      >
-        <div className="flex h-screen w-screen flex-col">
-          <Providers>
-            <Navigation />
-            <main className="flex-1">{children}</main>
-          </Providers>
-        </div>
-      </body>
-    </html>
+    <div
+      className={cn(
+        "flex h-screen w-screen bg-background text-gray-900 antialiased dark:text-gray-200",
+        raleway.className,
+      )}
+    >
+      <div className="flex h-screen w-screen flex-col">
+        <Providers>
+          <Navigation />
+          <main className="flex-1">{children}</main>
+        </Providers>
+      </div>
+    </div>
   );
 }
