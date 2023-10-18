@@ -60,9 +60,6 @@ export const ProjectSchema: SchemaTypeDefinition = {
       type: "array",
       of: [
         { type: "block" },
-        {
-          type: "break",
-        },
       ],
     },
     {
