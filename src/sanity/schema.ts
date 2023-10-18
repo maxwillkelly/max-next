@@ -9,13 +9,13 @@ export const ProjectSchema: SchemaTypeDefinition = {
       name: "title",
       type: "string",
       title: "Title",
-      validation: Rule => Rule.required(),
+      validation: (Rule) => Rule.required(),
     },
     {
       name: "slug",
       type: "slug",
       title: "Slug",
-      validation: Rule => Rule.required(),
+      validation: (Rule) => Rule.required(),
       options: {
         source: "title",
         maxLength: 96,
@@ -24,30 +24,30 @@ export const ProjectSchema: SchemaTypeDefinition = {
       },
     },
     {
-      name: 'releaseDate',
-      type: 'date',
-      title: 'Release Date',
+      name: "releaseDate",
+      type: "date",
+      title: "Release Date",
       options: {
-        dateFormat: 'DD/MM/YYYY',
-      }
+        dateFormat: "DD/MM/YYYY",
+      },
     },
     {
       name: "language",
       type: "string",
       title: "Language",
-      validation: Rule => Rule.required(),
+      validation: (Rule) => Rule.required(),
     },
     {
-      name: 'languageIcon',
-      type: 'image',
-      title: 'Language Icon',
+      name: "languageIcon",
+      type: "image",
+      title: "Language Icon",
       fields: [
         {
-          name: 'altText',
-          type: 'string',
-          title: 'Alternative Text',
-        }
-      ]
+          name: "altText",
+          type: "string",
+          title: "Alternative Text",
+        },
+      ],
     },
     {
       name: "subtitle",
@@ -55,10 +55,15 @@ export const ProjectSchema: SchemaTypeDefinition = {
       title: "Subtitle",
     },
     {
-      title: 'Content', 
-      name: 'content',
-      type: 'array', 
-      of: [{type: 'block'}]
+      title: "Content",
+      name: "content",
+      type: "array",
+      of: [
+        { type: "block" },
+        {
+          type: "break",
+        },
+      ],
     },
     {
       name: "name",

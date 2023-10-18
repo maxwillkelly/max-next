@@ -10,7 +10,7 @@ export const projectSelection = {
     withAsset: ["base"],
   }),
   subtitle: q.string().nullable(),
-  body: q.string(),
+  content: q.contentBlocks().nullable(),
   name: q.string().nullable(),
 } satisfies Selection;
 

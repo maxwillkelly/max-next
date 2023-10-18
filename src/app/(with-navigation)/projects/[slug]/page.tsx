@@ -2,6 +2,7 @@ import { projectSelection } from "../types";
 import CombinedImage from "@/app/_components/CombinedImage";
 import { runQuery } from "@/sanity/lib/fetch";
 import { Button } from "@nextui-org/button";
+import { PortableText } from "@portabletext/react";
 import { q } from "groqd";
 import { ArrowLeft } from "lucide-react";
 import { groq } from "next-sanity";
@@ -22,7 +23,9 @@ const ProjectPage = async ({ params }: Props) => {
     ),
   );
 
-  const { title, body, languageIcon, language } = project;
+  const { title, content, languageIcon, language } = project;
+
+  console.log(`content: ${JSON.stringify(content, null, 2)}`);
 
   return (
     <section className="space-y-6 pb-8 pt-6 md:pb-12 md:pt-10 lg:py-16">
@@ -42,18 +45,31 @@ const ProjectPage = async ({ params }: Props) => {
             <h1 className="text-2xl font-bold sm:text-3xl md:text-4xl lg:text-5xl">
               {title}
             </h1>
-              <CombinedImage
-                alt={`${language} logo`}
-                radius="none"
-                src={languageIcon?.asset.url}
-                width={32}
-                height={32}
-                className="h-full w-auto"
-              />
+            <CombinedImage
+              alt={`${language} logo`}
+              radius="none"
+              src={languageIcon?.asset.url}
+              width={32}
+              height={32}
+              className="h-full w-auto"
+            />
           </div>
         </div>
-        <div>
-          <p className="max-w-6xl sm:text-lg sm:leading-8">{body}</p>
+        <div className="flex flex-col gap-3">
+          {content && (
+            <PortableText
+              value={content}
+              components={{
+                block: {
+                  normal: ({ children }) => (
+                    <p className="max-w-6xl md:text-lg md:leading-8">
+                      {children}
+                    </p>
+                  ),
+                },
+              }}
+            />
+          )}
         </div>
       </div>
     </section>
