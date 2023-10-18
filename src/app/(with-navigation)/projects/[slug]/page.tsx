@@ -2,9 +2,12 @@ import { projectSelection } from "../types";
 import CombinedImage from "@/app/_components/CombinedImage";
 import { runQuery } from "@/sanity/lib/fetch";
 import { Button } from "@nextui-org/button";
+import { Chip } from "@nextui-org/chip";
+import { Link } from "@nextui-org/link";
+import { Tooltip } from "@nextui-org/tooltip";
 import { PortableText } from "@portabletext/react";
 import { q } from "groqd";
-import { ArrowLeft } from "lucide-react";
+import { ArrowLeft, GithubIcon, Link as LinkIcon } from "lucide-react";
 import { groq } from "next-sanity";
 import NextLink from "next/link";
 
@@ -23,9 +26,15 @@ const ProjectPage = async ({ params }: Props) => {
     ),
   );
 
-  const { title, content, languageIcon, language } = project;
-
-  console.log(`content: ${JSON.stringify(content, null, 2)}`);
+  const {
+    title,
+    content,
+    languageIcon,
+    language,
+    frameworks,
+    github,
+    deployedUrl,
+  } = project;
 
   return (
     <section className="space-y-6 pb-8 pt-6 md:pb-12 md:pt-10 lg:py-16">
@@ -53,6 +62,45 @@ const ProjectPage = async ({ params }: Props) => {
               height={32}
               className="h-full w-auto"
             />
+          </div>
+        </div>
+        <div className="flex justify-between">
+          <div className="flex flex-wrap items-center justify-start gap-2">
+            {frameworks?.map((framework) => (
+              <Chip variant="dot" color="danger" key={framework}>
+                {framework}
+              </Chip>
+            ))}
+          </div>
+          <div className="flex flex-wrap items-center justify-end gap-2 pb-4">
+            {deployedUrl && (
+              <Tooltip content="Launch site" placement="bottom">
+                <Button
+                  isExternal
+                  isIconOnly
+                  as={Link}
+                  color="danger"
+                  variant="shadow"
+                  href={deployedUrl}
+                >
+                  <LinkIcon className="p-0.5" />
+                </Button>
+              </Tooltip>
+            )}
+            {github && (
+              <Tooltip content="Github repository" placement="bottom">
+                <Button
+                  isExternal
+                  isIconOnly
+                  as={Link}
+                  color="danger"
+                  variant="shadow"
+                  href={github}
+                >
+                  <GithubIcon className="p-0.5" />
+                </Button>
+              </Tooltip>
+            )}
           </div>
         </div>
         <div className="flex flex-col gap-3">

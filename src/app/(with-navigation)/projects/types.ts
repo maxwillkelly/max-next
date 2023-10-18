@@ -12,6 +12,9 @@ export const projectSelection = {
   subtitle: q.string().nullable(),
   content: q.contentBlocks().nullable(),
   name: q.string().nullable(),
+  deployedUrl: q.string().url().nullable(),
+  github: q.string().url().nullable(),
+  frameworks: q.array(q.string()).nullable(),
 } satisfies Selection;
 
 export type Project = TypeFromSelection<typeof projectSelection>;
