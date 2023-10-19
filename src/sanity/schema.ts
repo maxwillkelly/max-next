@@ -68,9 +68,13 @@ export const ProjectSchema: SchemaTypeDefinition = {
       title: "Name",
     },
     {
-      name: "github",
-      type: "url",
-      title: "Github Link",
+      name: 'githubRepos',
+      type: 'array',
+      title: 'Github Repos',
+      of: [{ type: 'object', fields: [
+        { name: 'name', type: 'string', title: 'Name' },
+        { name: 'url', type: 'url', title: 'URL' },
+      ] }],
     },
     {
       name: "deployedUrl",

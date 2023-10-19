@@ -13,7 +13,14 @@ export const projectSelection = {
   content: q.contentBlocks().nullable(),
   name: q.string().nullable(),
   deployedUrl: q.string().url().nullable(),
-  github: q.string().url().nullable(),
+  githubRepos: q
+    .array(
+      q.object({
+        name: q.string().nullable(),
+        url: q.string().url().nullable(),
+      }),
+    )
+    .nullable(),
   frameworks: q.array(q.string()).nullable(),
 } satisfies Selection;
 

@@ -7,9 +7,10 @@ import { Link } from "@nextui-org/link";
 import { Tooltip } from "@nextui-org/tooltip";
 import { PortableText } from "@portabletext/react";
 import { q } from "groqd";
-import { ArrowLeft, GithubIcon, Link as LinkIcon } from "lucide-react";
+import { ArrowLeft, Link as LinkIcon } from "lucide-react";
 import { groq } from "next-sanity";
 import NextLink from "next/link";
+import GithubRepoButtons from "./_components/GithubRepoButtons";
 
 interface Props {
   params: {
@@ -32,7 +33,7 @@ const ProjectPage = async ({ params }: Props) => {
     languageIcon,
     language,
     frameworks,
-    github,
+    githubRepos,
     deployedUrl,
   } = project;
 
@@ -87,20 +88,7 @@ const ProjectPage = async ({ params }: Props) => {
                 </Button>
               </Tooltip>
             )}
-            {github && (
-              <Tooltip content="Github repository" placement="bottom">
-                <Button
-                  isExternal
-                  isIconOnly
-                  as={Link}
-                  color="danger"
-                  variant="shadow"
-                  href={github}
-                >
-                  <GithubIcon className="p-0.5" />
-                </Button>
-              </Tooltip>
-            )}
+            <GithubRepoButtons githubRepos={githubRepos} />
           </div>
         </div>
         <div className="flex flex-col gap-3">
