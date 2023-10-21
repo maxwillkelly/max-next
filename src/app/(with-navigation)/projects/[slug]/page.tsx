@@ -129,7 +129,6 @@ const ProjectPage = async ({ params }: Props) => {
             />
           )}
         </div>
-        <pre>{JSON.stringify(linkedDocuments, null, 2)}</pre>
       </div>
     </section>
   );
