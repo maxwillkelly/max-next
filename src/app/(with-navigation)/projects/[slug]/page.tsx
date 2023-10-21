@@ -1,4 +1,6 @@
 import { projectSelection } from "../types";
+import GithubRepoButtons from "./_components/GithubRepoButtons";
+import LinkedDesignsButtons from "./_components/LinkedDesignsButtons";
 import CombinedImage from "@/app/_components/CombinedImage";
 import { runQuery } from "@/sanity/lib/fetch";
 import { Button } from "@nextui-org/button";
@@ -10,7 +12,7 @@ import { q } from "groqd";
 import { ArrowLeft, Link as LinkIcon } from "lucide-react";
 import { groq } from "next-sanity";
 import NextLink from "next/link";
-import GithubRepoButtons from "./_components/GithubRepoButtons";
+import LinkedDocumentsButtons from "./_components/LinkedDocumentsButtons";
 
 interface Props {
   params: {
@@ -22,9 +24,25 @@ const ProjectPage = async ({ params }: Props) => {
   const { slug } = params;
 
   const project = await runQuery(
-    q(groq`*[_type == "project" && slug.current == "${slug}"][0]`).grab(
-      projectSelection,
-    ),
+    q(groq`*[_type == "project" && slug.current == "${slug}"][0]{
+        _id,
+        title,
+        slug,
+        language,
+        languageIcon,
+        subtitle,
+        releaseDate,
+        content,
+        name,
+        deployedUrl,
+        githubRepos,
+        linkedDesigns,
+        linkedDocuments[]{
+          name,
+          "url": file.asset->url
+        },
+        frameworks,
+    }`).grab(projectSelection),
   );
 
   const {
@@ -35,6 +53,8 @@ const ProjectPage = async ({ params }: Props) => {
     frameworks,
     githubRepos,
     deployedUrl,
+    linkedDesigns,
+    linkedDocuments,
   } = project;
 
   return (
@@ -88,6 +108,8 @@ const ProjectPage = async ({ params }: Props) => {
                 </Button>
               </Tooltip>
             )}
+            <LinkedDesignsButtons linkedDesigns={linkedDesigns} />
+            <LinkedDocumentsButtons linkedDocuments={linkedDocuments} />
             <GithubRepoButtons githubRepos={githubRepos} />
           </div>
         </div>
@@ -107,6 +129,7 @@ const ProjectPage = async ({ params }: Props) => {
             />
           )}
         </div>
+        <pre>{JSON.stringify(linkedDocuments, null, 2)}</pre>
       </div>
     </section>
   );

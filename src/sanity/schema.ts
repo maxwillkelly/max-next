@@ -58,9 +58,7 @@ export const ProjectSchema: SchemaTypeDefinition = {
       title: "Content",
       name: "content",
       type: "array",
-      of: [
-        { type: "block" },
-      ],
+      of: [{ type: "block" }],
     },
     {
       name: "name",
@@ -68,18 +66,51 @@ export const ProjectSchema: SchemaTypeDefinition = {
       title: "Name",
     },
     {
-      name: 'githubRepos',
-      type: 'array',
-      title: 'Github Repos',
-      of: [{ type: 'object', fields: [
-        { name: 'name', type: 'string', title: 'Name' },
-        { name: 'url', type: 'url', title: 'URL' },
-      ] }],
+      name: "githubRepos",
+      type: "array",
+      title: "Github Repos",
+      of: [
+        {
+          type: "object",
+          fields: [
+            { name: "name", type: "string", title: "Name" },
+            { name: "url", type: "url", title: "URL" },
+          ],
+        },
+      ],
     },
     {
       name: "deployedUrl",
       type: "url",
       title: "Deployed URL",
+    },
+    {
+      name: "linkedDesigns",
+      type: "array",
+      title: "Linked Designs",
+      of: [
+        {
+          type: "object",
+          fields: [
+            { name: "name", type: "string", title: "Name" },
+            { name: "url", type: "url", title: "URL" },
+          ],
+        },
+      ],
+    },
+    {
+      name: "linkedDocuments",
+      type: "array",
+      title: "Linked Documents",
+      of: [
+        {
+          type: "object",
+          fields: [
+            { name: "name", type: "string", title: "Name" },
+            { name: "file", type: "file", title: "File" },
+          ],
+        },
+      ],
     },
     {
       name: "frameworks",

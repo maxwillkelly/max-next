@@ -1,10 +1,10 @@
-import { Project } from "../types";
+import { ProjectSummary } from "../types";
 import CombinedImage from "@/app/_components/CombinedImage";
 import { Card, CardFooter } from "@nextui-org/card";
 import NextLink from "next/link";
 
 interface Props {
-  project: Project;
+  project: ProjectSummary;
 }
 
 const ProjectCard = ({ project }: Props) => {
