@@ -1,6 +1,5 @@
 import { projectSelection } from "../types";
-import GithubRepoButtons from "./_components/GithubRepoButtons";
-import LinkedDesignsButtons from "./_components/LinkedDesignsButtons";
+import ArrayButtonDropdown from "./_components/ArrayButtonDropdown";
 import CombinedImage from "@/app/_components/CombinedImage";
 import { runQuery } from "@/sanity/lib/fetch";
 import { Button } from "@nextui-org/button";
@@ -9,10 +8,15 @@ import { Link } from "@nextui-org/link";
 import { Tooltip } from "@nextui-org/tooltip";
 import { PortableText } from "@portabletext/react";
 import { q } from "groqd";
-import { ArrowLeft, Link as LinkIcon } from "lucide-react";
+import {
+  ArrowLeft,
+  Figma,
+  FileDown,
+  GithubIcon,
+  Link as LinkIcon,
+} from "lucide-react";
 import { groq } from "next-sanity";
 import NextLink from "next/link";
-import LinkedDocumentsButtons from "./_components/LinkedDocumentsButtons";
 
 interface Props {
   params: {
@@ -108,9 +112,30 @@ const ProjectPage = async ({ params }: Props) => {
                 </Button>
               </Tooltip>
             )}
-            <LinkedDesignsButtons linkedDesigns={linkedDesigns} />
-            <LinkedDocumentsButtons linkedDocuments={linkedDocuments} />
-            <GithubRepoButtons githubRepos={githubRepos} />
+            {/* <LinkedDesignsButtons linkedDesigns={linkedDesigns} /> */}
+            {/* <LinkedDocumentsButtons linkedDocuments={linkedDocuments} /> */}
+            {/* <GithubRepoButtons githubRepos={githubRepos} /> */}
+            <ArrayButtonDropdown
+              items={linkedDesigns}
+              dropdownAriaLabel="Designs"
+              buttonTooltipTitle="Figma"
+            >
+              <Figma className="p-0.5" />
+            </ArrayButtonDropdown>
+            <ArrayButtonDropdown
+              items={linkedDocuments}
+              dropdownAriaLabel="Files"
+              buttonTooltipTitle="Dissertation"
+            >
+              <FileDown className="p-0.5" />
+            </ArrayButtonDropdown>
+            <ArrayButtonDropdown
+              items={githubRepos}
+              dropdownAriaLabel="Github repositories"
+              buttonTooltipTitle="Github repository"
+            >
+              <GithubIcon className="p-0.5" />
+            </ArrayButtonDropdown>
           </div>
         </div>
         <div className="flex flex-col gap-3">

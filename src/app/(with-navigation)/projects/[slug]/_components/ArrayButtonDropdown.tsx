@@ -9,33 +9,37 @@ import {
 } from "@nextui-org/dropdown";
 import { Link } from "@nextui-org/link";
 import { Tooltip } from "@nextui-org/tooltip";
-import { Figma } from "lucide-react";
 import NextLink from "next/link";
 
-type LinkedDesign = {
+type Item = {
   name: string | null;
   url: string | null;
 };
 
-interface Props {
-  linkedDesigns: LinkedDesign[] | null;
-}
+type Props = {
+  items: Item[] | null;
+  dropdownAriaLabel: string;
+  buttonTooltipTitle: string | null;
+  children: React.ReactNode;
+};
 
-const LinkedDesignsButtons = ({ linkedDesigns }: Props) => {
-  if (!linkedDesigns) return null;
+const ArrayButtonDropdown = ({ items, dropdownAriaLabel, buttonTooltipTitle, children }: Props) => {
+  if (!items) return null;
 
-  if (linkedDesigns.length === 1) {
+  if (items.length === 1) {
+    const { url } = items[0];
+
     return (
-      <Tooltip content="Figma" placement="bottom">
+      <Tooltip content={buttonTooltipTitle} placement="bottom">
         <Button
           isExternal
           isIconOnly
           as={Link}
           color="danger"
           variant="shadow"
-          href={linkedDesigns[0].url || ""}
+          href={url || ""}
         >
-          <Figma className="p-0.5" />
+          {children}
         </Button>
       </Tooltip>
     );
@@ -45,22 +49,22 @@ const LinkedDesignsButtons = ({ linkedDesigns }: Props) => {
     <Dropdown>
       <DropdownTrigger>
         <Button isIconOnly color="danger" variant="shadow">
-          <Figma className="p-0.5" />
+          {children}
         </Button>
       </DropdownTrigger>
-      <DropdownMenu aria-label="Figma designs">
-        {linkedDesigns.map((design) => (
+      <DropdownMenu aria-label={dropdownAriaLabel}>
+        {items.map(({ name, url }) => (
           <DropdownItem
-            key={design.name || ""}
+            key={name || ""}
             as={NextLink}
             target="_blank"
             rel="noopener noreferrer"
             {...({
-              href: design.url || "",
+              href: url || "",
               // eslint-disable-next-line @typescript-eslint/no-explicit-any
             } as any)}
           >
-            {design.name}
+            {name}
           </DropdownItem>
         ))}
       </DropdownMenu>
@@ -68,4 +72,4 @@ const LinkedDesignsButtons = ({ linkedDesigns }: Props) => {
   );
 };
 
-export default LinkedDesignsButtons;
+export default ArrayButtonDropdown;
