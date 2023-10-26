@@ -37,6 +37,7 @@ const EducationItems = () => (
         ".NET",
         "MySQL",
         "PostgresSQL",
+        "Material UI",
         "Tailwind CSS",
         "Node.js",
         "Express",

@@ -27,6 +27,7 @@ const WorkItems = () => (
           "TypeScript",
           "React",
           "Next.js",
+          "Material UI",
           "Node.js",
           "GraphQL",
           "gRPC",
@@ -59,7 +60,7 @@ const WorkItems = () => (
           "Vue.js",
           "C#",
           ".NET",
-          "MongoDB",
+          "MySQL",
           "Docker",
           "React",
         ]}

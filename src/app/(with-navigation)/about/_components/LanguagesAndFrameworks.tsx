@@ -24,6 +24,7 @@ import {
   JavaOriginal,
   PythonOriginal,
   ScalaOriginal,
+  MaterialuiPlain,
 } from "devicons-react";
 import Image from "next/image";
 import React from "react";
@@ -54,6 +55,7 @@ const LanguagesAndFrameworks = () => (
       <LanguageCard title="Next.js" icon={<NextjsIcon />} />
       <LanguageCard title="Svelte" icon={<SvelteOriginal size={64} />} />
       <LanguageCard title="Vue.js" icon={<VuejsOriginal size={64} />} />
+      <LanguageCard title="Material UI" icon={<MaterialuiPlain size={64} />} />
       <LanguageCard
         title="Tailwind CSS"
         icon={<TailwindcssPlain size={64} />}
