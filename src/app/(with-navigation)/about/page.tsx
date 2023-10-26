@@ -25,7 +25,7 @@ const AboutPage = () => {
           variant="shadow"
           color="danger"
           endContent={<DownloadCloud />}
-          href="/cv-feburary-2022.pdf"
+          href="/cv-october-2023.pdf"
         >
           Download CV
         </Button>

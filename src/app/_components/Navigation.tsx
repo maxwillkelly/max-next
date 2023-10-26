@@ -88,7 +88,7 @@ const Navigation = () => {
         <Tooltip content="Download CV" placement="bottom">
           <Button
             as={Link}
-            href="/cv-feburary-2022.pdf"
+            href="/cv-october-2023.pdf"
             isExternal
             isIconOnly
             size="sm"
