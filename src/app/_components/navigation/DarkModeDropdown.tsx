@@ -25,7 +25,7 @@ const DarkModeDropdown = () => {
   return (
     <Dropdown>
       <DropdownTrigger>
-        <Button isIconOnly variant="light">
+        <Button aria-label="Change colour scheme" isIconOnly variant="light">
           {resolvedTheme === "light" ? <Sun /> : <Moon />}
         </Button>
       </DropdownTrigger>

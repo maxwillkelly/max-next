@@ -19,11 +19,16 @@ type Item = {
 type Props = {
   items: Item[] | null;
   dropdownAriaLabel: string;
-  buttonTooltipTitle: string | null;
+  buttonTooltipTitle: string;
   children: React.ReactNode;
 };
 
-const ArrayButtonDropdown = ({ items, dropdownAriaLabel, buttonTooltipTitle, children }: Props) => {
+const ArrayButtonDropdown = ({
+  items,
+  dropdownAriaLabel,
+  buttonTooltipTitle,
+  children,
+}: Props) => {
   if (!items) return null;
 
   if (items.length === 1) {
@@ -32,6 +37,7 @@ const ArrayButtonDropdown = ({ items, dropdownAriaLabel, buttonTooltipTitle, chi
     return (
       <Tooltip content={buttonTooltipTitle} placement="bottom">
         <Button
+          aria-label={buttonTooltipTitle}
           isExternal
           isIconOnly
           as={Link}
@@ -48,7 +54,12 @@ const ArrayButtonDropdown = ({ items, dropdownAriaLabel, buttonTooltipTitle, chi
   return (
     <Dropdown>
       <DropdownTrigger>
-        <Button isIconOnly color="danger" variant="shadow">
+        <Button
+          aria-label={buttonTooltipTitle}
+          isIconOnly
+          color="danger"
+          variant="shadow"
+        >
           {children}
         </Button>
       </DropdownTrigger>

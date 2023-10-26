@@ -112,9 +112,6 @@ const ProjectPage = async ({ params }: Props) => {
                 </Button>
               </Tooltip>
             )}
-            {/* <LinkedDesignsButtons linkedDesigns={linkedDesigns} /> */}
-            {/* <LinkedDocumentsButtons linkedDocuments={linkedDocuments} /> */}
-            {/* <GithubRepoButtons githubRepos={githubRepos} /> */}
             <ArrayButtonDropdown
               items={linkedDesigns}
               dropdownAriaLabel="Designs"

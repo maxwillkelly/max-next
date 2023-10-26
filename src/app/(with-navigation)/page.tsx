@@ -21,7 +21,7 @@ const HomePage = () => {
             variant="shadow"
             endContent={<Smile />}
           >
-            See more
+            View about
           </Button>
           <Button
             as={NextLink}

@@ -22,9 +22,9 @@ const TimelineItemCard = ({
   return (
     <Card className="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)]">
       <CardHeader className="flex flex-col space-y-2">
-        <h3 className="text-lg font-medium leading-6 text-gray-900 dark:text-gray-100">
+        <h2 className="text-lg font-medium leading-6 text-gray-900 dark:text-gray-100">
           {title}
-        </h3>
+        </h2>
         <p className="mt-1 text-sm text-gray-500 dark:text-gray-400">
           {subtitle}
         </p>
