@@ -25,6 +25,7 @@ import {
   PythonOriginal,
   ScalaOriginal,
   MaterialuiPlain,
+  RustPlain,
 } from "devicons-react";
 import Image from "next/image";
 import React from "react";
@@ -99,6 +100,7 @@ const LanguagesAndFrameworks = () => (
       <LanguageCard title="Java" icon={<JavaOriginal size={64} />} />
       <LanguageCard title="Python" icon={<PythonOriginal size={64} />} />
       <LanguageCard title="Scala" icon={<ScalaOriginal size={64} />} />
+      <LanguageCard title="Rust" icon={<RustPlain size={64} />} />
     </div>
   </div>
 );
