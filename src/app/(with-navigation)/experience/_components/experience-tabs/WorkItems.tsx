@@ -6,7 +6,7 @@ const WorkItems = () => (
       <JobItem
         employer="The Key Support Services"
         position="GovernorHub Software Engineer"
-        startDate={new Date("2021-06-28")}
+        startDate={new Date("2022-06-28")}
         endDate={null}
         body={
           <>
