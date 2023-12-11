@@ -55,10 +55,27 @@ export const ProjectSchema: SchemaTypeDefinition = {
       title: "Subtitle",
     },
     {
-      title: "Content",
       name: "content",
       type: "array",
+      title: "Content",
       of: [{ type: "block" }],
+    },
+    {
+      name: "images",
+      type: "array",
+      title: "Images",
+      of: [
+        {
+          type: "image",
+          fields: [
+            {
+              name: "altText",
+              type: "string",
+              title: "Alternative Text",
+            },
+          ],
+        },
+      ],
     },
     {
       name: "name",
