@@ -10,7 +10,7 @@ const HomePage = () => {
           Max Kelly
         </h1>
         <p className="p-4 sm:text-xl sm:leading-8">
-          I&apos;m a software engineer based in the UK, that thinks big about
+          I&apos;m a software engineer based in the UK, who thinks big about
           the small details.
         </p>
         <div className="flex gap-4">
