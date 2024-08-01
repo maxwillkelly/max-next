@@ -92,9 +92,7 @@ const ContactEmailTemplate = ({
             </Section>
             <Section className="text-center">
               <Button
-                pX={16}
-                pY={10}
-                className="rounded-xl bg-[#f31260] text-sm font-normal text-white subpixel-antialiased shadow-lg shadow-danger/40 outline-none"
+                className="rounded-xl bg-[#f31260] px-16 py-10 text-sm font-normal text-white subpixel-antialiased shadow-lg shadow-danger/40 outline-none"
                 href={mailtoLink}
               >
                 Reply

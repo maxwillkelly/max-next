@@ -12,7 +12,7 @@ const ExpoIcon = () => {
     setMounted(true);
   }, []);
 
-  if (!mounted) return <Skeleton className="h-16 w-16 rounded-full" />;
+  if (!mounted) return <Skeleton className="size-16 rounded-full" />;
 
   return (
     <svg

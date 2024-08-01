@@ -20,7 +20,7 @@ const DarkModeDropdown = () => {
     setMounted(true);
   }, []);
 
-  if (!mounted) return <Skeleton className="h-10 w-10 rounded-xl" />;
+  if (!mounted) return <Skeleton className="size-10 rounded-xl" />;
 
   return (
     <Dropdown>

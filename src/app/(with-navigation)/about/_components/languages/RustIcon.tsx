@@ -14,7 +14,7 @@ const RustIcon = () => {
     setMounted(true);
   }, []);
 
-  if (!mounted) return <Skeleton className="h-16 w-16 rounded-full" />;
+  if (!mounted) return <Skeleton className="size-16 rounded-full" />;
 
   if (resolvedTheme === "dark") {
     return <Image src="/rust-dark.svg" alt="Rust" width={64} height={64} />;
