@@ -1,14 +1,14 @@
 "use client";
 
-import { Button } from "@nextui-org/button";
 import {
+  Button,
   Dropdown,
   DropdownItem,
   DropdownMenu,
   DropdownTrigger,
-} from "@nextui-org/dropdown";
-import { Link } from "@nextui-org/link";
-import { Tooltip } from "@nextui-org/tooltip";
+  Link,
+  Tooltip,
+} from "@nextui-org/react";
 import NextLink from "next/link";
 
 type Item = {

@@ -1,13 +1,13 @@
 "use client";
 
-import { Button } from "@nextui-org/button";
 import {
+  Button,
   Dropdown,
   DropdownItem,
   DropdownMenu,
   DropdownTrigger,
-} from "@nextui-org/dropdown";
-import { Skeleton } from "@nextui-org/react";
+  Skeleton,
+} from "@nextui-org/react";
 import { Moon, Sun } from "lucide-react";
 import { useTheme } from "next-themes";
 import { useState, useEffect } from "react";

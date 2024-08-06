@@ -1,4 +1,4 @@
-import { Button } from "@nextui-org/button";
+import { Button } from "@nextui-org/react";
 import { SendHorizontal, Smile } from "lucide-react";
 import NextLink from "next/link";
 
@@ -10,8 +10,8 @@ const HomePage = () => {
           Max Kelly
         </h1>
         <p className="p-4 sm:text-xl sm:leading-8">
-          I&apos;m a software engineer based in the UK, who thinks big about
-          the small details.
+          I&apos;m a software engineer based in the UK, who thinks big about the
+          small details.
         </p>
         <div className="flex gap-4">
           <Button

@@ -3,9 +3,7 @@
 import { trpc } from "@/app/_trpc/client";
 import { ContactMessage, contactMessageSchema } from "@/shared/contactMessage";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { Button } from "@nextui-org/button";
-import { Input } from "@nextui-org/input";
-import { Textarea } from "@nextui-org/input";
+import { Button, Input, Textarea } from "@nextui-org/react";
 import { Check, SendHorizontal } from "lucide-react";
 import { SubmitHandler, useForm } from "react-hook-form";
 import useFormPersist from "react-hook-form-persist";

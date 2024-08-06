@@ -1,5 +1,4 @@
-import { Card, CardHeader, CardBody } from "@nextui-org/card";
-import { Chip } from "@nextui-org/chip";
+import { Card, CardHeader, CardBody, Chip } from "@nextui-org/react";
 import format from "date-fns/format";
 
 interface Props {

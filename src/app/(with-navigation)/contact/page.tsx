@@ -1,6 +1,5 @@
 import ContactForm from "./_components/ContactForm";
-import { Card, CardHeader, CardBody } from "@nextui-org/card";
-import { Link } from "@nextui-org/link";
+import { Card, CardHeader, CardBody, Link } from "@nextui-org/react";
 
 const ContactPage = () => {
   return (
