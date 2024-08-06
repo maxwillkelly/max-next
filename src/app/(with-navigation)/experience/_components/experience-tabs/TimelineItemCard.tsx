@@ -1,5 +1,5 @@
 import { Card, CardHeader, CardBody, Chip } from "@nextui-org/react";
-import format from "date-fns/format";
+import { format } from "date-fns";
 
 interface Props {
   title: React.ReactNode;

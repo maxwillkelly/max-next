@@ -11,16 +11,8 @@ import {
   NavbarMenuToggle,
   NavbarMenuItem,
 } from "@nextui-org/navbar";
-import { Tooltip, Button } from "@nextui-org/react";
-import {
-  DownloadCloud,
-  Github,
-  Link,
-  Linkedin,
-  Mail,
-  Menu,
-  X,
-} from "lucide-react";
+import { Button, Link, Tooltip } from "@nextui-org/react";
+import { DownloadCloud, Github, Linkedin, Mail, Menu, X } from "lucide-react";
 import NextLink from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";

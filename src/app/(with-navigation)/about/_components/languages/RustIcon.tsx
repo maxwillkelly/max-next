@@ -1,7 +1,7 @@
 "use client";
 
 import { Skeleton } from "@nextui-org/react";
-import { RustPlain } from "devicons-react";
+import { RustOriginal } from "devicons-react";
 import { useTheme } from "next-themes";
 import Image from "next/image";
 import React, { useEffect, useState } from "react";
@@ -19,8 +19,8 @@ const RustIcon = () => {
   if (resolvedTheme === "dark") {
     return <Image src="/rust-dark.svg" alt="Rust" width={64} height={64} />;
   }
-  
-  return <RustPlain size={64} />;
+
+  return <RustOriginal size={64} />;
 };
 
 export default RustIcon;
