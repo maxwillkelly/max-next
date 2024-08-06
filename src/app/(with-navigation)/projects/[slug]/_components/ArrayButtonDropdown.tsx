@@ -43,7 +43,7 @@ const ArrayButtonDropdown = ({
           as={Link}
           color="danger"
           variant="shadow"
-          href={url || ""}
+          href={url ?? ""}
         >
           {children}
         </Button>
@@ -66,12 +66,12 @@ const ArrayButtonDropdown = ({
       <DropdownMenu aria-label={dropdownAriaLabel}>
         {items.map(({ name, url }) => (
           <DropdownItem
-            key={name || ""}
+            key={name ?? ""}
             as={NextLink}
             target="_blank"
             rel="noopener noreferrer"
             {...({
-              href: url || "",
+              href: url ?? "",
               // eslint-disable-next-line @typescript-eslint/no-explicit-any
             } as any)}
           >

@@ -1,11 +1,14 @@
 "use client";
 
 import { trpc } from "@/app/_trpc/client";
-import { ContactMessage, contactMessageSchema } from "@/shared/contactMessage";
+import {
+  type ContactMessage,
+  contactMessageSchema,
+} from "@/shared/contactMessage";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Button, Input, Textarea } from "@nextui-org/react";
 import { Check, SendHorizontal } from "lucide-react";
-import { Controller, SubmitHandler, useForm } from "react-hook-form";
+import { Controller, type SubmitHandler, useForm } from "react-hook-form";
 
 const ContactForm = () => {
   const contactFormMutation = trpc.sendContactMessage.useMutation();
@@ -42,7 +45,7 @@ const ContactForm = () => {
               validationBehavior="native"
               isInvalid={Boolean(fieldState.error)}
               errorMessage={
-                fieldState.error?.message || <div className="h-4"></div>
+                fieldState.error?.message ?? <div className="h-4"></div>
               }
             />
           )}
@@ -60,7 +63,7 @@ const ContactForm = () => {
               validationBehavior="native"
               isInvalid={Boolean(fieldState.error)}
               errorMessage={
-                fieldState.error?.message || <div className="h-4"></div>
+                fieldState.error?.message ?? <div className="h-4"></div>
               }
             />
           )}
@@ -80,7 +83,7 @@ const ContactForm = () => {
               validationBehavior="native"
               isInvalid={Boolean(fieldState.error)}
               errorMessage={
-                fieldState.error?.message || <div className="h-4"></div>
+                fieldState.error?.message ?? <div className="h-4"></div>
               }
             />
           )}
@@ -98,7 +101,7 @@ const ContactForm = () => {
               validationBehavior="native"
               isInvalid={Boolean(fieldState.error)}
               errorMessage={
-                fieldState.error?.message || <div className="h-4"></div>
+                fieldState.error?.message ?? <div className="h-4"></div>
               }
             />
           )}
@@ -116,7 +119,7 @@ const ContactForm = () => {
             validationBehavior="native"
             isInvalid={Boolean(fieldState.error)}
             errorMessage={
-              fieldState.error?.message || <div className="h-4"></div>
+              fieldState.error?.message ?? <div className="h-4"></div>
             }
           />
         )}

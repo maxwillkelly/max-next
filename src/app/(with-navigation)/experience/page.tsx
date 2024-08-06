@@ -1,5 +1,5 @@
 import ExperienceTabs, {
-  ExperienceTabOptions,
+  type ExperienceTabOptions,
 } from "./_components/ExperienceTabs";
 
 const ExperiencePage = ({

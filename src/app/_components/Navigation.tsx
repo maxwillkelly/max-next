@@ -1,6 +1,6 @@
 "use client";
 
-import CombinedLink, { LinkAttributes } from "./CombinedLink";
+import CombinedLink, { type LinkAttributes } from "./CombinedLink";
 import DarkModeDropdown from "./navigation/DarkModeDropdown";
 import {
   Navbar,
