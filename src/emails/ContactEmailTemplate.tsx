@@ -149,7 +149,7 @@ const ContactEmailTemplate = ({
             </Section>
             <Section className="text-center">
               <Button
-                className="rounded-xl bg-[#f31260] px-4 min-w-20 py-2 text-sm font-normal text-white subpixel-antialiased shadow-lg shadow-danger/40 outline-none"
+                className="min-w-20 rounded-xl bg-[#f31260] px-4 py-2 text-sm font-normal text-white subpixel-antialiased shadow-lg shadow-danger/40 outline-none"
                 href={mailtoLink}
               >
                 Reply
