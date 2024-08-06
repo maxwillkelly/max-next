@@ -1,7 +1,6 @@
 import AboutHero from "./_components/AboutHero";
 import LanguagesAndFrameworks from "./_components/LanguagesAndFrameworks";
-import { Button } from "@nextui-org/button";
-import { Link } from "@nextui-org/link";
+import { Button, Link } from "@nextui-org/react";
 import { DownloadCloud } from "lucide-react";
 
 const AboutPage = () => {

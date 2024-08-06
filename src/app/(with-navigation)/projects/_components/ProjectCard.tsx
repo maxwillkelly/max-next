@@ -1,6 +1,6 @@
-import { ProjectSummary } from "../types";
+import { type ProjectSummary } from "../types";
 import CombinedImage from "@/app/_components/CombinedImage";
-import { Card, CardFooter } from "@nextui-org/card";
+import { Card, CardFooter } from "@nextui-org/react";
 import NextLink from "next/link";
 
 interface Props {

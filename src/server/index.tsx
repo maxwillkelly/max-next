@@ -17,7 +17,12 @@ export const appRouter = router({
         from: "Max Next <onboarding@resend.dev>",
         to: [env.SEND_EMAIL],
         subject: `You have received a message from ${firstName} ${lastName}`,
-        react: ContactEmailTemplate({ contactMessage, nodeEnv: env.NODE_ENV }),
+        react: (
+          <ContactEmailTemplate
+            contactMessage={contactMessage}
+            nodeEnv={env.NODE_ENV}
+          />
+        ),
       });
 
       return data;

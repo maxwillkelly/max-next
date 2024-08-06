@@ -1,9 +1,7 @@
 "use client";
 
-import CombinedLink, { LinkAttributes } from "./CombinedLink";
+import CombinedLink, { type LinkAttributes } from "./CombinedLink";
 import DarkModeDropdown from "./navigation/DarkModeDropdown";
-import { Button } from "@nextui-org/button";
-import { Link } from "@nextui-org/link";
 import {
   Navbar,
   NavbarBrand,
@@ -13,7 +11,7 @@ import {
   NavbarMenuToggle,
   NavbarMenuItem,
 } from "@nextui-org/navbar";
-import { Tooltip } from "@nextui-org/tooltip";
+import { Button, Link, Tooltip } from "@nextui-org/react";
 import { DownloadCloud, Github, Linkedin, Mail, Menu, X } from "lucide-react";
 import NextLink from "next/link";
 import { usePathname } from "next/navigation";

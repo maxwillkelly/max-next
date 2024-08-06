@@ -1,16 +1,16 @@
 "use client";
 
-import { Button } from "@nextui-org/button";
 import {
+  Button,
   Dropdown,
   DropdownItem,
   DropdownMenu,
   DropdownTrigger,
-} from "@nextui-org/dropdown";
-import { Skeleton } from "@nextui-org/react";
+  Skeleton,
+} from "@nextui-org/react";
 import { Moon, Sun } from "lucide-react";
 import { useTheme } from "next-themes";
-import { useState, useEffect } from "react";
+import { useState, useEffect, type SetStateAction } from "react";
 
 const DarkModeDropdown = () => {
   const [mounted, setMounted] = useState(false);
@@ -20,7 +20,7 @@ const DarkModeDropdown = () => {
     setMounted(true);
   }, []);
 
-  if (!mounted) return <Skeleton className="h-10 w-10 rounded-xl" />;
+  if (!mounted) return <Skeleton className="size-10 rounded-xl" />;
 
   return (
     <Dropdown>
@@ -37,7 +37,7 @@ const DarkModeDropdown = () => {
         selectedKeys={theme ? [theme] : []}
         onSelectionChange={(newTheme) => {
           if (newTheme === "all") return;
-          setTheme(newTheme.values().next().value);
+          setTheme(newTheme.values().next().value as SetStateAction<string>);
         }}
       >
         <DropdownItem key="light">Light</DropdownItem>

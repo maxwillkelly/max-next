@@ -1,18 +1,19 @@
+import ExpoIcon from "./languages/ExpoIcon";
 import ExpressIcon from "./languages/ExpressIcon";
 import GraphQLIcon from "./languages/GraphQLIcon";
 import GrpcIcon from "./languages/GrpcIcon";
 import LanguageCard from "./languages/LanguageCard";
 import NextjsIcon from "./languages/NextjsIcon";
-import ExpoIcon from "./languages/ExpoIcon";
+import RustIcon from "./languages/RustIcon";
 import {
   JavascriptOriginal,
   TypescriptOriginal,
   ReactOriginal,
   SvelteOriginal,
   VuejsOriginal,
-  TailwindcssPlain,
+  TailwindcssOriginal,
   NodejsOriginal,
-  NestjsPlain,
+  NestjsOriginal,
   DockerOriginal,
   CsharpOriginal,
   PostgresqlOriginal,
@@ -28,7 +29,6 @@ import {
 } from "devicons-react";
 import Image from "next/image";
 import React from "react";
-import RustIcon from "./languages/RustIcon";
 
 const LanguagesAndFrameworks = () => (
   <div className="container flex min-w-full flex-col items-center gap-4 pt-40 text-center">
@@ -59,14 +59,14 @@ const LanguagesAndFrameworks = () => (
       <LanguageCard title="Material UI" icon={<MaterialuiPlain size={64} />} />
       <LanguageCard
         title="Tailwind CSS"
-        icon={<TailwindcssPlain size={64} />}
+        icon={<TailwindcssOriginal size={64} />}
       />
     </div>
     <h3 className="">Back-end tools and frameworks</h3>
     <div className="flex max-w-3xl flex-wrap items-center justify-center gap-3 p-8 sm:gap-6">
       <LanguageCard title="Node.js" icon={<NodejsOriginal size={64} />} />
       <LanguageCard title="Express" icon={<ExpressIcon />} />
-      <LanguageCard title="NestJS" icon={<NestjsPlain size={64} />} />
+      <LanguageCard title="NestJS" icon={<NestjsOriginal size={64} />} />
       <LanguageCard title="GraphQL" icon={<GraphQLIcon />} />
       <LanguageCard title="gRPC" icon={<GrpcIcon />} />
       <LanguageCard title="Docker" icon={<DockerOriginal size={64} />} />

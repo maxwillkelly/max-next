@@ -1,8 +1,8 @@
 "use client";
 
-import { Skeleton } from "@nextui-org/skeleton";
+import { Skeleton } from "@nextui-org/react";
 import { useTheme } from "next-themes";
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 
 const ExpoIcon = () => {
   const [mounted, setMounted] = useState(false);
@@ -12,7 +12,7 @@ const ExpoIcon = () => {
     setMounted(true);
   }, []);
 
-  if (!mounted) return <Skeleton className="h-16 w-16 rounded-full" />;
+  if (!mounted) return <Skeleton className="size-16 rounded-full" />;
 
   return (
     <svg

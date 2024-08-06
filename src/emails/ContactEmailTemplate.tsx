@@ -1,15 +1,17 @@
-import { ContactMessage } from "@/shared/contactMessage";
-import { Body } from "@react-email/body";
-import { Button } from "@react-email/button";
-import { Container } from "@react-email/container";
-import { Head } from "@react-email/head";
-import { Heading } from "@react-email/heading";
-import { Html } from "@react-email/html";
-import { Link } from "@react-email/link";
-import { Preview } from "@react-email/preview";
-import { Section } from "@react-email/section";
-import { Tailwind } from "@react-email/tailwind";
-import { Text } from "@react-email/text";
+import { type ContactMessage } from "@/shared/contactMessage";
+import {
+  Body,
+  Button,
+  Container,
+  Head,
+  Heading,
+  Html,
+  Link,
+  Preview,
+  Section,
+  Tailwind,
+  Text,
+} from "@react-email/components";
 import * as React from "react";
 
 interface Props {
@@ -47,6 +49,61 @@ const ContactEmailTemplate = ({
       <Tailwind
         config={{
           theme: {
+            // Most email clients do not support REM units, so we use pixels instead
+            // https://react.email/docs/components/tailwind#tailwind-configuration-with-px-instead-of-rem
+            fontSize: {
+              xs: ["12px", { lineHeight: "16px" }],
+              sm: ["14px", { lineHeight: "20px" }],
+              base: ["16px", { lineHeight: "24px" }],
+              lg: ["18px", { lineHeight: "28px" }],
+              xl: ["20px", { lineHeight: "28px" }],
+              "2xl": ["24px", { lineHeight: "32px" }],
+              "3xl": ["30px", { lineHeight: "36px" }],
+              "4xl": ["36px", { lineHeight: "36px" }],
+              "5xl": ["48px", { lineHeight: "1" }],
+              "6xl": ["60px", { lineHeight: "1" }],
+              "7xl": ["72px", { lineHeight: "1" }],
+              "8xl": ["96px", { lineHeight: "1" }],
+              "9xl": ["144px", { lineHeight: "1" }],
+            },
+            spacing: {
+              px: "1px",
+              0: "0",
+              0.5: "2px",
+              1: "4px",
+              1.5: "6px",
+              2: "8px",
+              2.5: "10px",
+              3: "12px",
+              3.5: "14px",
+              4: "16px",
+              5: "20px",
+              6: "24px",
+              7: "28px",
+              8: "32px",
+              9: "36px",
+              10: "40px",
+              11: "44px",
+              12: "48px",
+              14: "56px",
+              16: "64px",
+              20: "80px",
+              24: "96px",
+              28: "112px",
+              32: "128px",
+              36: "144px",
+              40: "160px",
+              44: "176px",
+              48: "192px",
+              52: "208px",
+              56: "224px",
+              60: "240px",
+              64: "256px",
+              72: "288px",
+              80: "320px",
+              96: "384px",
+            },
+            // NextUI colours
             extend: {
               colors: {
                 white: "#FFFFFF",
@@ -92,9 +149,7 @@ const ContactEmailTemplate = ({
             </Section>
             <Section className="text-center">
               <Button
-                pX={16}
-                pY={10}
-                className="rounded-xl bg-[#f31260] text-sm font-normal text-white subpixel-antialiased shadow-lg shadow-danger/40 outline-none"
+                className="min-w-20 rounded-xl bg-[#f31260] px-4 py-2 text-sm font-normal text-white subpixel-antialiased shadow-lg shadow-danger/40 outline-none"
                 href={mailtoLink}
               >
                 Reply

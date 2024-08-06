@@ -2,10 +2,10 @@
 
 import EducationItems from "./experience-tabs/EducationItems";
 import WorkItems from "./experience-tabs/WorkItems";
-import { Tabs, Tab } from "@nextui-org/tabs";
+import { Tabs, Tab } from "@nextui-org/react";
 import { Briefcase, GraduationCap } from "lucide-react";
 import { useRouter } from "next/navigation";
-import { Key, useCallback } from "react";
+import { type Key, useCallback } from "react";
 
 export enum ExperienceTabOptions {
   WORK = "work",
@@ -32,9 +32,7 @@ const ExperienceTabs = ({ tab }: Props) => {
   );
 
   const handleTabChange = (value: Key) => {
-    router.push(
-      "/experience" + "?" + createQueryString("tab", value),
-    );
+    router.push("/experience" + "?" + createQueryString("tab", value));
   };
 
   return (
