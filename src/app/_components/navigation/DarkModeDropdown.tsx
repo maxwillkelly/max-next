@@ -10,7 +10,7 @@ import {
 } from "@nextui-org/react";
 import { Moon, Sun } from "lucide-react";
 import { useTheme } from "next-themes";
-import { useState, useEffect, SetStateAction } from "react";
+import { useState, useEffect, type SetStateAction } from "react";
 
 const DarkModeDropdown = () => {
   const [mounted, setMounted] = useState(false);
