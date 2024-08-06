@@ -5,26 +5,20 @@ import { ContactMessage, contactMessageSchema } from "@/shared/contactMessage";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Button, Input, Textarea } from "@nextui-org/react";
 import { Check, SendHorizontal } from "lucide-react";
-import { SubmitHandler, useForm } from "react-hook-form";
-import useFormPersist from "react-hook-form-persist";
+import { Controller, SubmitHandler, useForm } from "react-hook-form";
 
 const ContactForm = () => {
   const contactFormMutation = trpc.sendContactMessage.useMutation();
 
-  const {
-    register,
-    handleSubmit,
-    watch,
-    setValue,
-    formState: { errors },
-    reset,
-  } = useForm<ContactMessage>({
+  const { control, handleSubmit, reset } = useForm<ContactMessage>({
+    defaultValues: {
+      firstName: "",
+      lastName: "",
+      email: "",
+      subtitle: "",
+      message: "",
+    },
     resolver: zodResolver(contactMessageSchema),
-  });
-
-  useFormPersist("contact-me-form", {
-    watch,
-    setValue,
   });
 
   const onSubmit: SubmitHandler<ContactMessage> = async (data) => {
@@ -35,54 +29,97 @@ const ContactForm = () => {
   return (
     <form className="flex flex-col flex-wrap" onSubmit={handleSubmit(onSubmit)}>
       <div className="mb-6 md:flex">
-        <Input
-          type="text"
-          label="First Name"
-          placeholder="John"
-          className="mb-6 px-3 md:mb-0 md:w-1/2"
-          isInvalid={Boolean(errors.firstName)}
-          errorMessage={
-            errors.firstName?.message || <div className="h-4"></div>
-          }
-          {...register("firstName")}
+        <Controller
+          name="firstName"
+          control={control}
+          render={({ field, fieldState }) => (
+            <Input
+              {...field}
+              type="text"
+              label="First Name"
+              placeholder="John"
+              className="mb-6 px-3 md:mb-0 md:w-1/2"
+              validationBehavior="native"
+              isInvalid={Boolean(fieldState.error)}
+              errorMessage={
+                fieldState.error?.message || <div className="h-4"></div>
+              }
+            />
+          )}
         />
-        <Input
-          type="text"
-          label="Last Name"
-          placeholder="Smith"
-          className="px-3 md:w-1/2"
-          isInvalid={Boolean(errors.lastName)}
-          errorMessage={errors.lastName?.message || <div className="h-4"></div>}
-          {...register("lastName")}
+        <Controller
+          name="lastName"
+          control={control}
+          render={({ field, fieldState }) => (
+            <Input
+              {...field}
+              type="text"
+              label="Last Name"
+              placeholder="Smith"
+              className="px-3 md:w-1/2"
+              validationBehavior="native"
+              isInvalid={Boolean(fieldState.error)}
+              errorMessage={
+                fieldState.error?.message || <div className="h-4"></div>
+              }
+            />
+          )}
         />
       </div>
       <div className="mb-6 md:flex">
-        <Input
-          type="email"
-          label="Email"
-          placeholder="john.smith@email.com"
-          className="mb-6 px-3 md:mb-0 md:w-1/2"
-          isInvalid={Boolean(errors.email)}
-          errorMessage={errors.email?.message || <div className="h-4"></div>}
-          {...register("email")}
+        <Controller
+          name="email"
+          control={control}
+          render={({ field, fieldState }) => (
+            <Input
+              {...field}
+              type="email"
+              label="Email"
+              placeholder="john.smith@email.com"
+              className="mb-6 px-3 md:mb-0 md:w-1/2"
+              validationBehavior="native"
+              isInvalid={Boolean(fieldState.error)}
+              errorMessage={
+                fieldState.error?.message || <div className="h-4"></div>
+              }
+            />
+          )}
         />
-        <Input
-          type="subtitle"
-          label="Subtitle"
-          placeholder="Hello"
-          className="px-3 md:w-1/2"
-          isInvalid={Boolean(errors.subtitle)}
-          errorMessage={errors.subtitle?.message || <div className="h-4"></div>}
-          {...register("subtitle")}
+        <Controller
+          name="subtitle"
+          control={control}
+          render={({ field, fieldState }) => (
+            <Input
+              {...field}
+              type="text"
+              label="Subtitle"
+              placeholder="Hello"
+              className="px-3 md:w-1/2"
+              validationBehavior="native"
+              isInvalid={Boolean(fieldState.error)}
+              errorMessage={
+                fieldState.error?.message || <div className="h-4"></div>
+              }
+            />
+          )}
         />
       </div>
-      <Textarea
-        label="Message"
-        placeholder="Let's rock 'n' roll"
-        className="mb-6 px-3"
-        isInvalid={Boolean(errors.message)}
-        errorMessage={errors.message?.message || <div className="h-4"></div>}
-        {...register("message")}
+      <Controller
+        name="message"
+        control={control}
+        render={({ field, fieldState }) => (
+          <Textarea
+            {...field}
+            label="Message"
+            placeholder="Let's rock 'n' roll"
+            className="mb-6 px-3"
+            validationBehavior="native"
+            isInvalid={Boolean(fieldState.error)}
+            errorMessage={
+              fieldState.error?.message || <div className="h-4"></div>
+            }
+          />
+        )}
       />
       <Button
         type="submit"
