@@ -1,7 +1,7 @@
-import { cn } from "../utils";
 import "./globals.css";
 import { Providers } from "./providers";
 import Navigation from "@/app/_components/Navigation";
+import { cn } from "@nextui-org/react";
 import type { Metadata } from "next";
 import { Raleway } from "next/font/google";
 
@@ -39,16 +39,14 @@ export default function NavigationLayout({
   return (
     <div
       className={cn(
-        "flex h-screen w-screen bg-background text-gray-900 antialiased dark:text-gray-200",
+        "bg-background text-gray-900 antialiased dark:text-gray-200",
         raleway.className,
       )}
     >
-      <div className="flex h-screen w-screen flex-col">
-        <Providers>
-          <Navigation />
-          <main className="flex-1">{children}</main>
-        </Providers>
-      </div>
+      <Providers>
+        <Navigation />
+        <main>{children}</main>
+      </Providers>
     </div>
   );
 }
