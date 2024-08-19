@@ -1,4 +1,4 @@
-import { Image, type ImageProps } from "@nextui-org/react";
+import { Image, type ImageProps } from "@nextui-org/image";
 import NextImage, { type ImageProps as NextImageProps } from "next/image";
 
 type Props = ImageProps & NextImageProps;
