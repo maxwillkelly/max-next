@@ -1,4 +1,4 @@
-import { Button } from "@nextui-org/react";
+import { Button } from "@nextui-org/button";
 import { SendHorizontal, Smile } from "lucide-react";
 import NextLink from "next/link";
 

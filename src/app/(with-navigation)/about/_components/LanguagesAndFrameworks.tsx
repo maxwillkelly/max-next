@@ -3,7 +3,6 @@ import ExpressIcon from "./languages/ExpressIcon";
 import GraphQLIcon from "./languages/GraphQLIcon";
 import GrpcIcon from "./languages/GrpcIcon";
 import LanguageCard from "./languages/LanguageCard";
-import NextjsIcon from "./languages/NextjsIcon";
 import RustIcon from "./languages/RustIcon";
 import {
   JavascriptOriginal,
@@ -26,12 +25,13 @@ import {
   PythonOriginal,
   ScalaOriginal,
   MaterialuiPlain,
+  NextjsOriginal,
 } from "devicons-react";
 import Image from "next/image";
 import React from "react";
 
 const LanguagesAndFrameworks = () => (
-  <div className="container flex min-w-full flex-col items-center gap-4 pt-40 text-center">
+  <div className="flex w-full flex-col items-center gap-4 pt-40 text-center">
     <h2 className="text-lg font-bold sm:text-2xl md:text-3xl lg:text-4xl">
       Languages and Frameworks
     </h2>
@@ -53,7 +53,7 @@ const LanguagesAndFrameworks = () => (
         icon={<TypescriptOriginal size={64} />}
       />
       <LanguageCard title="React" icon={<ReactOriginal size={64} />} />
-      <LanguageCard title="Next.js" icon={<NextjsIcon />} />
+      <LanguageCard title="Next.js" icon={<NextjsOriginal size={64} />} />
       <LanguageCard title="Svelte" icon={<SvelteOriginal size={64} />} />
       <LanguageCard title="Vue.js" icon={<VuejsOriginal size={64} />} />
       <LanguageCard title="Material UI" icon={<MaterialuiPlain size={64} />} />
