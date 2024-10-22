@@ -19,12 +19,13 @@ import { groq } from "next-sanity";
 import NextLink from "next/link";
 
 interface Props {
-  params: {
+  params: Promise<{
     slug: string;
-  };
+  }>;
 }
 
-const ProjectPage = async ({ params }: Props) => {
+const ProjectPage = async (props: Props) => {
+  const params = await props.params;
   const { slug } = params;
 
   const project = await runQuery(

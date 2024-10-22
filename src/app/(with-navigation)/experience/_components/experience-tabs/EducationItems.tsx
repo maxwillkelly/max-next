@@ -26,7 +26,8 @@ const EducationItems = () => (
           (DUCS) and served as Treasurer for 2021-22. I helped hold the first
           in-person society events, shortly after the UK had just emerged from
           the final Coronavirus lockdown. During my time on the committee, we
-          held many successful events such as a Hackathon (sponsored by BlackRock and Unity) and a Ceildh.
+          held many successful events such as a Hackathon (sponsored by
+          BlackRock and Unity) and a Ceildh.
         </>
       }
       languagesAndFrameworks={[
