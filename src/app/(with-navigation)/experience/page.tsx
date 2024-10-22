@@ -2,11 +2,9 @@ import ExperienceTabs, {
   type ExperienceTabOptions,
 } from "./_components/ExperienceTabs";
 
-const ExperiencePage = async (
-  props: {
-    searchParams: Promise<{ tab: ExperienceTabOptions | undefined }>;
-  }
-) => {
+const ExperiencePage = async (props: {
+  searchParams: Promise<{ tab: ExperienceTabOptions | undefined }>;
+}) => {
   const searchParams = await props.searchParams;
   const { tab } = searchParams;
 

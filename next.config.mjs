@@ -10,9 +10,7 @@ const nextConfig = {
       },
     ],
   },
-  serverExternalPackages: [
-    "@react-email/components",
-  ],
+  serverExternalPackages: ["@react-email/components"],
 };
 
 export default nextConfig;

@@ -17,7 +17,7 @@ const GrpcIcon = () => {
 
   return (
     <Image
-      src={resolvedTheme === "dark" ? "/grpc-dark.svg" : "/grpc-light.png" }
+      src={resolvedTheme === "dark" ? "/grpc-dark.svg" : "/grpc-light.png"}
       alt="gRPC logo"
       className="size-16 rounded-full"
       width={64}
