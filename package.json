@@ -30,7 +30,7 @@
     "clsx": "^2.1.1",
     "date-fns": "^3.6.0",
     "devicons-react": "^1.3.0",
-    "eslint": "^8.57.1",
+    "eslint": "^9.13.0",
     "eslint-config-next": "15.0.0",
     "framer-motion": "^11.11.9",
     "groqd": "^0.15.12",
@@ -52,6 +52,8 @@
     "zod": "^3.23.8"
   },
   "devDependencies": {
+    "@eslint/eslintrc": "^3.1.0",
+    "@eslint/js": "^9.13.0",
     "@trivago/prettier-plugin-sort-imports": "^4.3.0",
     "@typescript-eslint/eslint-plugin": "^8.11.0",
     "@typescript-eslint/parser": "^8.11.0",
