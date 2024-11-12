@@ -45,7 +45,7 @@ export default function NavigationLayout({
     >
       <Providers>
         <Navigation />
-        <main>{children}</main>
+        <main className="container mx-auto">{children}</main>
       </Providers>
     </div>
   );
