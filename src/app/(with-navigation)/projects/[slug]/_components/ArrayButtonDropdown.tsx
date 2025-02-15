@@ -8,7 +8,7 @@ import {
   DropdownTrigger,
   Link,
   Tooltip,
-} from "@nextui-org/react";
+} from "@heroui/react";
 import NextLink from "next/link";
 
 type Item = {

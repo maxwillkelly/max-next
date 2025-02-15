@@ -1,6 +1,6 @@
 "use client";
 
-import { Skeleton } from "@nextui-org/react";
+import { Skeleton } from "@heroui/react";
 import { RustOriginal } from "devicons-react";
 import { useTheme } from "next-themes";
 import Image from "next/image";

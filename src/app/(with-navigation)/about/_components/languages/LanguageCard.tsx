@@ -1,4 +1,4 @@
-import { Card, CardBody, CardFooter } from "@nextui-org/card";
+import { Card, CardBody, CardFooter } from "@heroui/card";
 
 interface Props {
   title: string;

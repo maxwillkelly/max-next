@@ -2,10 +2,10 @@ import { projectSelection } from "../types";
 import ArrayButtonDropdown from "./_components/ArrayButtonDropdown";
 import CombinedImage from "@/app/_components/CombinedImage";
 import { runQuery } from "@/sanity/lib/fetch";
-import { Button } from "@nextui-org/button";
-import { Chip } from "@nextui-org/chip";
-import { Link } from "@nextui-org/link";
-import { Tooltip } from "@nextui-org/tooltip";
+import { Button } from "@heroui/button";
+import { Chip } from "@heroui/chip";
+import { Link } from "@heroui/link";
+import { Tooltip } from "@heroui/tooltip";
 import { PortableText } from "@portabletext/react";
 import { q } from "groqd";
 import {

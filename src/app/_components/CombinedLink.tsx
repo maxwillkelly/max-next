@@ -1,4 +1,4 @@
-import { Link, type LinkProps } from "@nextui-org/react";
+import { Link, type LinkProps } from "@heroui/react";
 import NextLink from "next/link";
 
 export type LinkAttributes = {
