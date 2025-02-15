@@ -1,6 +1,6 @@
 "use client";
 
-import { Button } from "@nextui-org/react";
+import { Button } from "@heroui/react";
 import { Home } from "lucide-react";
 import NextLink from "next/link";
 

@@ -2,7 +2,7 @@
 
 import EducationItems from "./experience-tabs/EducationItems";
 import WorkItems from "./experience-tabs/WorkItems";
-import { Tabs, Tab } from "@nextui-org/react";
+import { Tabs, Tab } from "@heroui/react";
 import { Briefcase, GraduationCap } from "lucide-react";
 import { useRouter } from "next/navigation";
 import { type Key, useCallback } from "react";

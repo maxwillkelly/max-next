@@ -1,7 +1,7 @@
 import "./globals.css";
 import { Providers } from "./providers";
 import Navigation from "@/app/_components/Navigation";
-import { cn } from "@nextui-org/react";
+import { cn } from "@heroui/react";
 import type { Metadata } from "next";
 import { Raleway } from "next/font/google";
 

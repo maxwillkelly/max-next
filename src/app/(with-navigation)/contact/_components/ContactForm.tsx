@@ -6,7 +6,7 @@ import {
   contactMessageSchema,
 } from "@/shared/contactMessage";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { Button, Input, Textarea } from "@nextui-org/react";
+import { Button, Input, Textarea } from "@heroui/react";
 import { Check, SendHorizontal } from "lucide-react";
 import { Controller, type SubmitHandler, useForm } from "react-hook-form";
 

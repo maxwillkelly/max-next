@@ -1,7 +1,7 @@
 "use client";
 
 import { trpc } from "../_trpc/client";
-import { NextUIProvider } from "@nextui-org/react";
+import { HeroUIProvider } from "@heroui/react";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { httpBatchLink } from "@trpc/client";
 import { ThemeProvider } from "next-themes";
@@ -27,7 +27,7 @@ export function Providers({ children }: { children: React.ReactNode }) {
           defaultTheme="system"
           enableSystem={true}
         >
-          <NextUIProvider>{children}</NextUIProvider>
+          <HeroUIProvider>{children}</HeroUIProvider>
         </ThemeProvider>
       </QueryClientProvider>
     </trpc.Provider>

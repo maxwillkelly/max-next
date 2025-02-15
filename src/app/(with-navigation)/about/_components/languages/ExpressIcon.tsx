@@ -1,6 +1,6 @@
 "use client";
 
-import { Skeleton } from "@nextui-org/react";
+import { Skeleton } from "@heroui/react";
 import { ExpressOriginal } from "devicons-react";
 import { useTheme } from "next-themes";
 import React, { useEffect, useState } from "react";

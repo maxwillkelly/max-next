@@ -7,7 +7,7 @@ import {
   DropdownMenu,
   DropdownTrigger,
   Skeleton,
-} from "@nextui-org/react";
+} from "@heroui/react";
 import { Moon, Sun } from "lucide-react";
 import { useTheme } from "next-themes";
 import { useState, useEffect, type SetStateAction } from "react";

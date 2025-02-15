@@ -1,4 +1,4 @@
-import { Image, type ImageProps } from "@nextui-org/image";
+import { Image, type ImageProps } from "@heroui/image";
 import NextImage, { type ImageProps as NextImageProps } from "next/image";
 
 type Props = ImageProps & NextImageProps;
