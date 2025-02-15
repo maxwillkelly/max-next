@@ -40,7 +40,7 @@ const ExperienceTabs = ({ tab }: Props) => {
       aria-label="Experience type options"
       color="danger"
       size="lg"
-      selectedKey={tab ? tab : ExperienceTabOptions.WORK}
+      selectedKey={tab ?? ExperienceTabOptions.WORK}
       onSelectionChange={handleTabChange}
     >
       <Tab
