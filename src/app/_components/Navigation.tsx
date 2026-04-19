@@ -1,7 +1,6 @@
 "use client";
 
 import CombinedLink, { type LinkAttributes } from "./CombinedLink";
-import DarkModeDropdown from "./navigation/DarkModeDropdown";
 import {
   Navbar,
   NavbarBrand,
@@ -11,10 +10,16 @@ import {
   NavbarMenuToggle,
   NavbarMenuItem,
 } from "@heroui/navbar";
-import { Button, Link, Tooltip } from "@heroui/react";
+import { Button, Link, Skeleton, Tooltip } from "@heroui/react";
 import { DownloadCloud, Github, Linkedin, Mail, Menu, X } from "lucide-react";
+import dynamic from "next/dynamic";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
+
+const DarkModeDropdown = dynamic(() => import("./navigation/DarkModeDropdown"), {
+  ssr: false,
+  loading: () => <Skeleton className="size-10 rounded-xl" />,
+});
 
 const Navigation = () => {
   const items: LinkAttributes[] = [

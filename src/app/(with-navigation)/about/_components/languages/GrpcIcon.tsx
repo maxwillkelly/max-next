@@ -1,28 +1,25 @@
 "use client";
 
-import { Skeleton } from "@heroui/react";
-import { useTheme } from "next-themes";
 import Image from "next/image";
-import React, { useEffect, useState } from "react";
 
 const GrpcIcon = () => {
-  const [mounted, setMounted] = useState(false);
-  const { resolvedTheme } = useTheme();
-
-  useEffect(() => {
-    setMounted(true);
-  }, []);
-
-  if (!mounted) return <Skeleton className="size-16 rounded-full" />;
-
   return (
-    <Image
-      src={resolvedTheme === "dark" ? "/grpc-dark.svg" : "/grpc-light.png"}
-      alt="gRPC logo"
-      className="size-16 rounded-full"
-      width={64}
-      height={64}
-    />
+    <>
+      <Image
+        src="/grpc-light.png"
+        alt="gRPC logo"
+        className="size-16 rounded-full dark:hidden"
+        width={64}
+        height={64}
+      />
+      <Image
+        src="/grpc-dark.svg"
+        alt="gRPC logo"
+        className="hidden size-16 rounded-full dark:block"
+        width={64}
+        height={64}
+      />
+    </>
   );
 };
 

@@ -6,21 +6,13 @@ import {
   DropdownItem,
   DropdownMenu,
   DropdownTrigger,
-  Skeleton,
 } from "@heroui/react";
 import { Moon, Sun } from "lucide-react";
 import { useTheme } from "next-themes";
-import { useState, useEffect, type SetStateAction } from "react";
+import { type SetStateAction } from "react";
 
 const DarkModeDropdown = () => {
-  const [mounted, setMounted] = useState(false);
   const { theme, resolvedTheme, setTheme } = useTheme();
-
-  useEffect(() => {
-    setMounted(true);
-  }, []);
-
-  if (!mounted) return <Skeleton className="size-10 rounded-xl" />;
 
   return (
     <Dropdown>

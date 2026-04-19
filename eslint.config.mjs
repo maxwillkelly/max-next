@@ -16,14 +16,26 @@ const compat = new FlatCompat({
   allConfig: js.configs.all,
 });
 
-export default [
+const withTypescriptFiles = (configs) => {
+  return configs.map((config) => ({
+    ...config,
+    files: ["**/*.{ts,tsx}"],
+  }));
+};
+
+const eslintConfig = [
   ...nextTypescript,
   ...nextCoreWebVitals,
-  ...compat.extends("plugin:@typescript-eslint/recommended-type-checked"),
-  ...compat.extends("plugin:@typescript-eslint/stylistic-type-checked"),
+  ...withTypescriptFiles(
+    compat.extends("plugin:@typescript-eslint/recommended-type-checked"),
+  ),
+  ...withTypescriptFiles(
+    compat.extends("plugin:@typescript-eslint/stylistic-type-checked"),
+  ),
   ...compat.extends("plugin:tailwindcss/recommended"),
   ...compat.extends("prettier"),
   {
+    files: ["**/*.{ts,tsx}"],
     plugins: {
       "@typescript-eslint": typescriptEslint,
       tailwindcss,
@@ -77,6 +89,18 @@ export default [
     },
   },
   {
+    files: ["**/*.{js,mjs,cjs}"],
+    languageOptions: {
+      ecmaVersion: "latest",
+      sourceType: "module",
+      parserOptions: {
+        project: null,
+      },
+    },
+  },
+  {
     ignores: ["node_modules/**", ".next/**", "out/**", "build/**", "next-env.d.ts"]
   }
 ];
+
+export default eslintConfig;
