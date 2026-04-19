@@ -18,6 +18,7 @@ const ProjectPage = async () => {
       subtitle
     }`,
     projectSummarySchema.array(),
+    undefined,
   );
 
   return (
