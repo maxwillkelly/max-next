@@ -1,3 +1,5 @@
+import nextTypescript from "eslint-config-next/typescript";
+import nextCoreWebVitals from "eslint-config-next/core-web-vitals";
 import { FlatCompat } from "@eslint/eslintrc";
 import js from "@eslint/js";
 import typescriptEslint from "@typescript-eslint/eslint-plugin";
@@ -15,13 +17,12 @@ const compat = new FlatCompat({
 });
 
 export default [
-  ...compat.extends(
-    "next/core-web-vitals",
-    "plugin:@typescript-eslint/recommended-type-checked",
-    "plugin:@typescript-eslint/stylistic-type-checked",
-    "plugin:tailwindcss/recommended",
-    "prettier",
-  ),
+  ...nextTypescript,
+  ...nextCoreWebVitals,
+  ...compat.extends("plugin:@typescript-eslint/recommended-type-checked"),
+  ...compat.extends("plugin:@typescript-eslint/stylistic-type-checked"),
+  ...compat.extends("plugin:tailwindcss/recommended"),
+  ...compat.extends("prettier"),
   {
     plugins: {
       "@typescript-eslint": typescriptEslint,
@@ -75,4 +76,7 @@ export default [
       ],
     },
   },
+  {
+    ignores: ["node_modules/**", ".next/**", "out/**", "build/**", "next-env.d.ts"]
+  }
 ];

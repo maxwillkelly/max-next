@@ -13,7 +13,6 @@ import {
 } from "@heroui/navbar";
 import { Button, Link, Tooltip } from "@heroui/react";
 import { DownloadCloud, Github, Linkedin, Mail, Menu, X } from "lucide-react";
-import NextLink from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
 
@@ -53,13 +52,17 @@ const Navigation = () => {
         />
       </NavbarContent>
       <NavbarContent className="md:hidden" justify="center">
-        <NavbarBrand as={NextLink} href="/">
-          <p className="font-bold text-inherit">Max Kelly</p>
+        <NavbarBrand>
+          <Link className="font-bold text-inherit" color="foreground" href="/">
+            Max Kelly
+          </Link>
         </NavbarBrand>
       </NavbarContent>
       <NavbarContent className="hidden gap-4 md:flex" justify="center">
-        <NavbarBrand as={NextLink} href="/">
-          <p className="font-bold text-inherit">Max Kelly</p>
+        <NavbarBrand>
+          <Link className="font-bold text-inherit" color="foreground" href="/">
+            Max Kelly
+          </Link>
         </NavbarBrand>
         {items.map((link) => (
           <NavbarItem key={link.name} isActive={link.href === pathname}>
@@ -85,21 +88,21 @@ const Navigation = () => {
       <NavbarContent className="hidden xs:flex" justify="end">
         <Tooltip content="Download CV" placement="bottom">
           <Button
-            as={Link}
+            as="a"
             href="/cv-october-2023.pdf"
-            isExternal
             isIconOnly
             size="sm"
             variant="light"
             aria-label="Download CV"
+            rel="noopener noreferrer"
+            target="_blank"
           >
             <DownloadCloud />
           </Button>
         </Tooltip>
         <Tooltip content="Email me" placement="bottom">
           <Button
-            as={Link}
-            isExternal
+            as="a"
             href="mailto:maxwill.kelly@gmail.com"
             isIconOnly
             size="sm"
@@ -111,26 +114,28 @@ const Navigation = () => {
         </Tooltip>
         <Tooltip content="Github" placement="bottom">
           <Button
-            as={Link}
-            isExternal
+            as="a"
             href="https://github.com/maxwillkelly"
             isIconOnly
             size="sm"
             variant="light"
             aria-label="Github"
+            rel="noopener noreferrer"
+            target="_blank"
           >
             <Github />
           </Button>
         </Tooltip>
         <Tooltip content="LinkedIn" placement="bottom">
           <Button
-            as={Link}
-            isExternal
+            as="a"
             isIconOnly
             size="sm"
             variant="light"
             aria-label="LinkedIn"
             href="https://www.linkedin.com/in/maxwillkelly/"
+            rel="noopener noreferrer"
+            target="_blank"
           >
             <Linkedin />
           </Button>

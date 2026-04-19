@@ -6,10 +6,8 @@ import {
   DropdownItem,
   DropdownMenu,
   DropdownTrigger,
-  Link,
   Tooltip,
 } from "@heroui/react";
-import NextLink from "next/link";
 
 type Item = {
   name: string | null;
@@ -38,12 +36,13 @@ const ArrayButtonDropdown = ({
       <Tooltip content={buttonTooltipTitle} placement="bottom">
         <Button
           aria-label={buttonTooltipTitle}
-          isExternal
           isIconOnly
-          as={Link}
+          as="a"
           color="danger"
           variant="shadow"
           href={url ?? ""}
+          rel="noopener noreferrer"
+          target="_blank"
         >
           {children}
         </Button>
@@ -67,13 +66,9 @@ const ArrayButtonDropdown = ({
         {items.map(({ name, url }) => (
           <DropdownItem
             key={name ?? ""}
-            as={NextLink}
+            href={url ?? ""}
             target="_blank"
             rel="noopener noreferrer"
-            {...({
-              href: url ?? "",
-              // eslint-disable-next-line @typescript-eslint/no-explicit-any
-            } as any)}
           >
             {name}
           </DropdownItem>

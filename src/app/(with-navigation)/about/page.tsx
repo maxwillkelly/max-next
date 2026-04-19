@@ -1,7 +1,6 @@
 import AboutHero from "./_components/AboutHero";
 import LanguagesAndFrameworks from "./_components/LanguagesAndFrameworks";
 import { Button } from "@heroui/button";
-import { Link } from "@heroui/link";
 import { DownloadCloud } from "lucide-react";
 
 const AboutPage = () => {
@@ -20,12 +19,13 @@ const AboutPage = () => {
       </div>
       <div className="mt-8 flex flex-1 justify-center">
         <Button
-          as={Link}
-          isExternal
+          as="a"
           variant="shadow"
           color="danger"
           endContent={<DownloadCloud />}
           href="/cv-october-2023.pdf"
+          rel="noopener noreferrer"
+          target="_blank"
         >
           Download CV
         </Button>

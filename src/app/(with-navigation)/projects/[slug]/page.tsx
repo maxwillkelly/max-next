@@ -4,7 +4,6 @@ import CombinedImage from "@/app/_components/CombinedImage";
 import { runQuery } from "@/sanity/lib/fetch";
 import { Button } from "@heroui/button";
 import { Chip } from "@heroui/chip";
-import { Link } from "@heroui/link";
 import { Tooltip } from "@heroui/tooltip";
 import { PortableText } from "@portabletext/react";
 import { q } from "groqd";
@@ -16,7 +15,6 @@ import {
   Link as LinkIcon,
 } from "lucide-react";
 import { groq } from "next-sanity";
-import NextLink from "next/link";
 
 interface Props {
   params: Promise<{
@@ -67,7 +65,7 @@ const ProjectPage = async (props: Props) => {
       <div className="container flex min-w-full flex-col gap-4 px-6 sm:px-12 md:px-24 lg:px-48">
         <div className="flex flex-col items-start">
           <Button
-            as={NextLink}
+            as="a"
             href="/projects"
             color="danger"
             variant="light"
@@ -102,12 +100,13 @@ const ProjectPage = async (props: Props) => {
             {deployedUrl && (
               <Tooltip content="Launch site" placement="bottom">
                 <Button
-                  isExternal
                   isIconOnly
-                  as={Link}
+                  as="a"
                   color="danger"
                   variant="shadow"
                   href={deployedUrl}
+                  rel="noopener noreferrer"
+                  target="_blank"
                 >
                   <LinkIcon className="p-0.5" />
                 </Button>

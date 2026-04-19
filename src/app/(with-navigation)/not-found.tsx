@@ -2,7 +2,6 @@
 
 import { Button } from "@heroui/react";
 import { Home } from "lucide-react";
-import NextLink from "next/link";
 
 const ErrorPage = () => {
   return (
@@ -15,8 +14,8 @@ const ErrorPage = () => {
           Looks like you&apos;ve gone to a page that doesn&apos;t exist!{" "}
         </p>
         <Button
-          as={NextLink}
-          href="/about"
+          as="a"
+          href="/"
           color="danger"
           variant="shadow"
           endContent={<Home />}

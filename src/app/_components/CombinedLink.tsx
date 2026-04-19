@@ -1,5 +1,4 @@
 import { Link, type LinkProps } from "@heroui/react";
-import NextLink from "next/link";
 
 export type LinkAttributes = {
   name: string;
@@ -12,7 +11,7 @@ interface Props extends LinkProps {
 
 const CombinedLink = ({ link: { name, href }, ...other }: Props) => {
   return (
-    <Link href={href} as={NextLink} {...other}>
+    <Link href={href} {...other}>
       {name}
     </Link>
   );

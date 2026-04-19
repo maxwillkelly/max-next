@@ -1,6 +1,5 @@
 import { Button } from "@heroui/button";
 import { SendHorizontal, Smile } from "lucide-react";
-import NextLink from "next/link";
 
 const HomePage = () => {
   return (
@@ -15,7 +14,7 @@ const HomePage = () => {
         </p>
         <div className="flex gap-4">
           <Button
-            as={NextLink}
+            as="a"
             href="/about"
             color="danger"
             variant="shadow"
@@ -24,7 +23,7 @@ const HomePage = () => {
             View about
           </Button>
           <Button
-            as={NextLink}
+            as="a"
             href="/contact"
             variant="ghost"
             endContent={<SendHorizontal />}
