@@ -5,13 +5,14 @@ import {
   type ContactMessage,
   contactMessageSchema,
 } from "@/shared/contactMessage";
-import { zodResolver } from "@hookform/resolvers/zod";
 import { Button, Input, Textarea } from "@heroui/react";
+import { zodResolver } from "@hookform/resolvers/zod";
 import { Check, SendHorizontal } from "lucide-react";
 import { Controller, type SubmitHandler, useForm } from "react-hook-form";
 
 const ContactForm = () => {
-  const contactFormMutation = trpc.sendContactMessage.useMutation();
+  const { isError, isIdle, isPending, isSuccess, mutateAsync } =
+    trpc.sendContactMessage.useMutation();
 
   const { control, handleSubmit, reset } = useForm<ContactMessage>({
     defaultValues: {
@@ -25,7 +26,7 @@ const ContactForm = () => {
   });
 
   const onSubmit: SubmitHandler<ContactMessage> = async (data) => {
-    await contactFormMutation.mutateAsync({ contactMessage: data });
+    await mutateAsync({ contactMessage: data });
     reset();
   };
 
@@ -127,19 +128,14 @@ const ContactForm = () => {
       <Button
         type="submit"
         color="danger"
-        endContent={
-          contactFormMutation.isSuccess ? <Check /> : <SendHorizontal />
-        }
-        isLoading={contactFormMutation.isLoading}
-        disabled={
-          contactFormMutation.isLoading || contactFormMutation.isSuccess
-        }
+        endContent={isSuccess ? <Check /> : <SendHorizontal />}
+        isLoading={isPending}
+        disabled={isPending || isSuccess}
       >
-        {contactFormMutation.isIdle && "Send message"}
-        {contactFormMutation.isLoading && "Sending..."}
-        {contactFormMutation.isError &&
-          "Failed to send message, click to retry"}
-        {contactFormMutation.isSuccess && "Sent"}
+        {isIdle && "Send message"}
+        {isPending && "Sending..."}
+        {isError && "Failed to send message, click to retry"}
+        {isSuccess && "Sent"}
       </Button>
     </form>
   );
