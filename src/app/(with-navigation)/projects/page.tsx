@@ -1,22 +1,23 @@
 import ProjectCard from "./_components/ProjectCard";
-import { projectSummarySelection } from "./types";
+import { projectSummarySchema } from "./types";
 import { runQuery } from "@/sanity/lib/fetch";
-import { q } from "groqd";
 import { groq } from "next-sanity";
 
 const ProjectPage = async () => {
   const projects = await runQuery(
-    q(
-      groq`*[_type == "project"]{
-        _id,
-        title,
-        slug,
-        language,
-        languageIcon,
-        subtitle,
-    } | order(releaseDate desc)`,
-      { isArray: true },
-    ).grab(projectSummarySelection),
+    groq`*[_type == "project"] | order(releaseDate desc){
+      _id,
+      title,
+      slug,
+      language,
+      languageIcon{
+        asset->{
+          url
+        }
+      },
+      subtitle
+    }`,
+    projectSummarySchema.array(),
   );
 
   return (

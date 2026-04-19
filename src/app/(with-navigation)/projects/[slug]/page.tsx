@@ -1,4 +1,4 @@
-import { projectSelection } from "../types";
+import { projectSchema } from "../types";
 import ArrayButtonDropdown from "./_components/ArrayButtonDropdown";
 import CombinedImage from "@/app/_components/CombinedImage";
 import { runQuery } from "@/sanity/lib/fetch";
@@ -6,7 +6,6 @@ import { Button } from "@heroui/button";
 import { Chip } from "@heroui/chip";
 import { Tooltip } from "@heroui/tooltip";
 import { PortableText } from "@portabletext/react";
-import { q } from "groqd";
 import {
   ArrowLeft,
   Figma,
@@ -27,25 +26,31 @@ const ProjectPage = async (props: Props) => {
   const { slug } = params;
 
   const project = await runQuery(
-    q(groq`*[_type == "project" && slug.current == "${slug}"][0]{
-        _id,
-        title,
-        slug,
-        language,
-        languageIcon,
-        subtitle,
-        releaseDate,
-        content,
+    groq`*[_type == "project" && slug.current == $slug][0]{
+      _id,
+      title,
+      slug,
+      language,
+      languageIcon{
+        asset->{
+          url
+        }
+      },
+      subtitle,
+      releaseDate,
+      content,
+      name,
+      deployedUrl,
+      githubRepos,
+      linkedDesigns,
+      linkedDocuments[]{
         name,
-        deployedUrl,
-        githubRepos,
-        linkedDesigns,
-        linkedDocuments[]{
-          name,
-          "url": file.asset->url
-        },
-        frameworks,
-    }`).grab(projectSelection),
+        "url": file.asset->url
+      },
+      frameworks
+    }`,
+    projectSchema,
+    { slug },
   );
 
   const {
@@ -59,6 +64,7 @@ const ProjectPage = async (props: Props) => {
     linkedDesigns,
     linkedDocuments,
   } = project;
+  const languageIconUrl = languageIcon?.asset?.url ?? undefined;
 
   return (
     <section className="space-y-6 pb-8 pt-6 md:pb-12 md:pt-10 lg:py-16">
@@ -78,14 +84,16 @@ const ProjectPage = async (props: Props) => {
             <h1 className="text-2xl font-bold sm:text-3xl md:text-4xl lg:text-5xl">
               {title}
             </h1>
-            <CombinedImage
-              alt={`${language} logo`}
-              radius="none"
-              src={languageIcon?.asset.url}
-              width={32}
-              height={32}
-              className="h-full w-auto"
-            />
+            {languageIconUrl ? (
+              <CombinedImage
+                alt={`${language} logo`}
+                radius="none"
+                src={languageIconUrl}
+                width={32}
+                height={32}
+                className="h-full w-auto"
+              />
+            ) : null}
           </div>
         </div>
         <div className="flex justify-between">

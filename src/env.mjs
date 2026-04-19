@@ -4,7 +4,7 @@ import { z } from "zod";
 export const env = createEnv({
   server: {
     RESEND_API_KEY: z.string().min(1),
-    SEND_EMAIL: z.string().email(),
+    SEND_EMAIL: z.email(),
     SANITY_API_READ_TOKEN: z.string().min(1),
   },
   client: {

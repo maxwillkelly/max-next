@@ -9,9 +9,10 @@ interface Props {
 
 const ProjectCard = ({ project }: Props) => {
   const { slug, title, subtitle, language, languageIcon } = project;
+  const languageIconUrl = languageIcon?.asset?.url ?? undefined;
 
   return (
-    <Link className="block" href={`/projects/${slug}`}>
+    <Link className="block" href={`/projects/${slug.current}`}>
       <Card
         className="flex w-96 overflow-hidden border-none"
         radius="lg"
@@ -34,13 +35,15 @@ const ProjectCard = ({ project }: Props) => {
                 {title}
               </h2>
             </div>
-            <CombinedImage
-              alt={`${language} logo`}
-              radius="none"
-              src={languageIcon?.asset.url}
-              width={32}
-              height={32}
-            />
+            {languageIconUrl ? (
+              <CombinedImage
+                alt={`${language} logo`}
+                radius="none"
+                src={languageIconUrl}
+                width={32}
+                height={32}
+              />
+            ) : null}
           </div>
           <p className="text-left text-sm text-gray-500 dark:text-gray-400">
             {subtitle}

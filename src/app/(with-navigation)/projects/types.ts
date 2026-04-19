@@ -1,44 +1,45 @@
-import { q, sanityImage, type Selection, type TypeFromSelection } from "groqd";
+import { type PortableTextBlock } from "@portabletext/react";
+import { z } from "zod";
 
-// import { groq } from "next-sanity";
-// import { z } from "zod";
+const imageAssetSchema = z.object({
+  url: z.url().nullable(),
+});
 
-export const projectSummarySelection = {
-  _id: q.string().uuid(),
-  title: q.string(),
-  slug: q.slug("slug"),
-  language: q.string(),
-  languageIcon: sanityImage("languageIcon", {
-    withAsset: ["base"],
+const languageIconSchema = z
+  .object({
+    asset: imageAssetSchema.nullable(),
+  })
+  .nullable();
+
+const linkedItemSchema = z.object({
+  name: z.string().nullable(),
+  url: z.url().nullable(),
+});
+
+export const projectSummarySchema = z.object({
+  _id: z.uuid(),
+  title: z.string(),
+  slug: z.object({
+    current: z.string(),
   }),
-  subtitle: q.string().nullable(),
-} satisfies Selection;
+  language: z.string(),
+  languageIcon: languageIconSchema,
+  subtitle: z.string().nullable(),
+});
 
-export type ProjectSummary = TypeFromSelection<typeof projectSummarySelection>;
+export type ProjectSummary = z.infer<typeof projectSummarySchema>;
 
-export const projectSelection = {
-  ...projectSummarySelection,
-  releaseDate: q.date(),
-  content: q.contentBlocks().nullable(),
-  name: q.string().nullable(),
-  deployedUrl: q.string().url().nullable(),
-  githubRepos: q
-    .array(
-      q.object({
-        name: q.string().nullable(),
-        url: q.string().url().nullable(),
-      }),
-    )
-    .nullable(),
-  linkedDesigns: q
-    .array(
-      q.object({ name: q.string().nullable(), url: q.string().nullable() }),
-    )
-    .nullable(),
-  linkedDocuments: q
-    .array(q.object({ name: q.string(), url: q.string() }))
-    .nullable(),
-  frameworks: q.array(q.string()).nullable(),
-} satisfies Selection;
+export const projectSchema = projectSummarySchema.extend({
+  releaseDate: z.string().nullable(),
+  content: z.custom<PortableTextBlock[] | null>(
+    (value) => value === null || Array.isArray(value),
+  ),
+  name: z.string().nullable(),
+  deployedUrl: z.url().nullable(),
+  githubRepos: z.array(linkedItemSchema).nullable(),
+  linkedDesigns: z.array(linkedItemSchema).nullable(),
+  linkedDocuments: z.array(linkedItemSchema).nullable(),
+  frameworks: z.array(z.string()).nullable(),
+});
 
-export type Project = TypeFromSelection<typeof projectSelection>;
+export type Project = z.infer<typeof projectSchema>;
